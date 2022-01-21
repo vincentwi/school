@@ -1,0 +1,105 @@
+---
+title: "MA HW2"
+output: html_notebook
+---
+
+
+```{r}
+library(keras)
+library(tensorflow)
+# install_tensorflow()
+# install_keras()
+#use_condaenv("r-reticulate", required = TRUE)
+```
+
+```{r}
+N = 400
+set.seed(123)
+n = seq(1:N)
+a = n/10+4*sin(n/10)+sample(-1:6,N,replace=T)+rnorm(N)
+ 
+head(a,20)
+```
+
+```{r}
+step = 2 
+
+a = c(a, replicate(step, tail(a, 1)))
+
+x = NULL
+y = NULL
+for(i in 1:N)
+{
+  s = i-1+step
+  x = rbind(x,a[i:s])
+  y = rbind(y,a[s+1])
+}
+ 
+cbind(head(x), head(y))
+```
+
+```{r}
+X = array(x, dim=c(N, step,1))
+```
+
+```{r}
+model <-  keras_model_sequential()
+ 
+model %>% summary()
+ 
+
+model %>% summary()
+```
+
+```{r}
+library(keras)
+
+model <- keras_model_sequential() 
+model %>% 
+  layer_dense(units = 32, input_shape = c(784)) %>% 
+  layer_activation('relu') %>% 
+  layer_dense(units = 10) %>% 
+  layer_activation('softmax')
+```
+
+```{r}
+remove.packages("keras")
+remove.packages("tensorflow")
+
+install.packages("keras")
+install.packages("tensorflow")
+library(keras)
+library(tensorflow)
+install_tensorflow()
+install_keras()
+#install_keras(method = 'conda')
+#use_condaenv("r-reticulate", required = TRUE)
+use_python("~/miniforge3/bin/python")
+hello <- tf$constant("Hello")
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

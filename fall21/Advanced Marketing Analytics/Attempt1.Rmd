@@ -1,0 +1,163 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+library("DBI")
+library(dplyr)
+library(ggalluvial)
+```
+
+```{r}
+
+connect <- dbConnect(RMariaDB::MariaDB(), group = "charity_small")
+result <- dbGetQuery(connect, "USE ma_charity_small;")
+print(result)
+```
+
+```{r}
+# In which segments were donors last period,
+# and where are they now?
+q = " SELECT old.segment as 'last_year', new.segment as 'this_year', COUNT(new.segment) as 'freq'
+FROM segments old,
+     segments new
+WHERE (old.contact_id = new.contact_id) AND
+      (old.period_id = 1) AND
+      (new.period_id = 0)  AND
+      NOT ISNULL(old.segment) AND
+      NOT ISNULL(new.segment) 
+GROUP BY 1, 2
+ORDER BY 1, 2;"
+result <- dbGetQuery(connect, q)
+df <- as.data.frame(result, fix.empty.names = TRUE)
+print(df)
+```
+```{r}
+is.na.data.frame(df)
+```
+
+
+
+```{r}
+dfl <- to_lodes_form(df,
+                     key = "x", value = "stratum", id = id,
+                               axes = 1:2, distil=TRUE)
+dfl
+```
+```{r}
+dfa <- to_alluvia_form(dfl,
+                     key = "x", value = "freq", id = "id", distill = TRUE)
+dfa
+```
+
+```{r}
+gg <- ggplot(df,
+             aes(axis1 = last_year, axis2 = this_year))
+gg +
+  geom_alluvium(aes(fill = last_year), width = 2/5, discern = TRUE) +
+  geom_stratum(width = 2/5, discern = FALSE) +
+  geom_text(stat = "stratum", discern = FALSE, aes(label = after_stat(stratum)))
+```
+
+
+
+```{r}
+gg <- ggplot(dfl,
+             aes(x=x, stratum=stratum, alluvium=id))
+gg +
+  geom_alluvium(aes(fill = stratum), width = 2/5, discern = TRUE)+
+  geom_stratum(width = 2/5, discern = FALSE) +
+  geom_text(stat = "stratum", discern = FALSE, aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("this_year", "last_year"))
+```
+
+```{r}
+dfa <- to_alluvia_form(df, key=this_year, stratum=count, id=id, distill = TRUE)
+```
+
+```{r}
+
+ggplot(data = df,
+       aes(axis1 = last_year, axis2 = this_year)) +
+  geom_alluvium(aes(fill = this_year)) +
+  geom_stratum(aes(fill = this_year)) +
+  geom_text(stat = "stratum",
+            aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("this_year", "last_year"),
+                   expand = c(0.15, 0.05)) +
+  guides(fill = guide_legend(title = "Segments"))+
+  theme_void()
+```
+
+```{r}
+library(dplyr)
+library(magrittr)
+ggplot(data = vaccinations,
+       aes(axis1 = survey, axis2 = response, y = freq)) +
+  geom_alluvium(aes(fill = response)) +
+  geom_stratum() +
+  geom_text(stat = "stratum",
+            aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("Survey", "Response"),
+                   expand = c(0.15, 0.05)) +
+  theme_void()
+```
+
+```{r}
+#df.cols <- sapply(df, is.character)
+#df.cols
+#df[, df.cols] <- sapply(df[, df.cols], as.factor)
+df$this_yearF <-as.factor(df$this_year)
+df$last_yearF <-as.factor(df$last_year)
+df$freqI <-as.integer(df$freq)
+df
+```
+```{r}
+ggplot(data = df,
+       aes(axis1 = last_yearF, axis2 = this_yearF, y = freqI)) +
+  geom_alluvium(aes(fill = last_yearF)) +
+  geom_stratum() +
+  geom_text(stat = "stratum",
+            aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("this_yearF", "last_yearF"),
+                   expand = c(0.15, 0.05)) +
+  theme_void()
+```
+
+
+
+
+```{r}
+data(vaccinations)
+vaccinations
+vaccinations <- transform(vaccinations,
+                          response = factor(response, rev(levels(response))))
+vaccinations
+```
+
+```{r}
+
+ggplot(vaccinations,
+       aes(x = survey, stratum = response, alluvium = subject,
+           y = freq,
+           fill = response, label = response)) +
+  scale_x_discrete(expand = c(.1, .1)) +
+  geom_flow() +
+  geom_stratum(alpha = .5) +
+  geom_text(stat = "stratum", size = 3) +
+  theme(legend.position = "none") +
+  ggtitle("vaccination survey responses at three points in time")
+```
+
+
+
+
+
+
+
+
+

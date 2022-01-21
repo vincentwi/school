@@ -1,0 +1,399 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library("DBI")
+
+connect <- dbConnect(RMariaDB::MariaDB(), group = "charity_small")
+result <- dbGetQuery(connect, "USE ma_charity_small;")
+print(result)
+```
+
+```{r}
+# How many donors have we had?
+q ="SELECT COUNT(DISTINCT contact_id) as num_donors
+FROM acts;"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+```{r}
+# Clean tables for the exercise
+q = "DROP TABLE IF EXISTS periods;"
+z = "DROP TABLE IF EXISTS segments;"
+result <- dbGetQuery(connect, q)
+result <- dbGetQuery(connect, z)
+print(result)
+```
+
+```{r}
+# We're going to divide the past into periods
+# Create a table to store period information
+q= "CREATE TABLE periods (
+  period_id INTEGER NOT NULL,
+  first_day DATE NOT NULL,
+  last_day DATE NOT NULL,
+  PRIMARY KEY (period_id)
+)
+ENGINE = MyISAM;"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+```{r}
+# Define 11 periods
+# Period 0 = the most recent ("today")
+q = "INSERT INTO periods
+VALUES ( 0, 20170626, 20180625),
+       ( 1, 20160626, 20170625),
+       ( 2, 20150626, 20160625),
+       ( 3, 20140626, 20150625),
+       ( 4, 20130626, 20140625),
+       ( 5, 20120626, 20130625),
+       ( 6, 20110626, 20120625),
+       ( 7, 20100626, 20110625),
+       ( 8, 20090626, 20100625),
+       ( 9, 20080626, 20090625),
+       (10, 20070626, 20080625);"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+
+```{r}
+# Create a segment table
+# It will store to which segment each donor belonged
+# in each period
+q = " CREATE TABLE segments (
+  sq INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  contact_id INTEGER UNSIGNED NOT NULL,
+  period_id INTEGER NOT NULL,
+  segment VARCHAR(7),
+  PRIMARY KEY (sq),
+  INDEX idx_contact_id(contact_id),
+  INDEX idx_period_id(period_id))
+ENGINE = MyISAM;"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+```{r}
+# This will create a placeholder for all
+# contact-by-period possible combinations
+q = "INSERT INTO segments (contact_id, period_id)
+SELECT a.contact_id, p.period_id
+FROM acts a,
+     periods p
+GROUP BY 1, 2;"
+result <- dbGetQuery(connect, q)
+print(result)
+
+```
+
+```{r}
+# Create the NEW segment
+q = "UPDATE
+  segments s,
+  (SELECT contact_id, period_id
+   FROM periods p,
+        (SELECT contact_id, MIN(act_date) AS first_act
+         FROM acts
+         GROUP BY 1) AS f
+   WHERE (f.first_act <= p.last_day) AND
+         (f.first_act >= p.first_day)) AS d
+SET
+  s.segment = 'NEW'
+WHERE
+  (s.contact_id = d.contact_id) AND
+  (s.period_id = d.period_id) AND
+  (s.segment IS NULL);"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+```{r}
+# Create a TBFOUND segment
+q = "UPDATE
+  segments s,
+  (SELECT contact_id, period_id
+   FROM   segments
+   WHERE  segment = 'NEW') AS a
+SET
+  s.segment = 'TBFOUND'
+WHERE
+  (s.contact_id = a.contact_id) AND
+  (s.period_id  > a.period_id)  AND
+  (s.segment IS NULL);"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+```{r}
+# Create the AUTO segment
+q = "UPDATE
+  segments s,
+  (SELECT contact_id, period_id
+   FROM   acts a, periods p
+   WHERE  (a.act_date <= p.last_day) AND
+          (a.act_date >= p.first_day) AND
+          (a.act_type_id = 'PA')) AS d
+SET
+  s.segment = 'AUTO'
+WHERE
+  (s.contact_id = d.contact_id) AND
+  (s.period_id = d.period_id);"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+```{r}
+# Create the BOTTOM/UP segment
+q = "UPDATE
+  segments s,
+  (SELECT contact_id, period_id, SUM(amount) AS generosity
+   FROM   acts a, periods p
+   WHERE  (a.act_date <= p.last_day) AND
+          (a.act_date >= p.first_day) AND
+          (a.act_type_id = 'DO')
+   GROUP BY 1, 2) AS d
+SET
+  s.segment = IF(generosity < 100, 'BOTTOM', 'TOP')
+WHERE
+  (s.contact_id = d.contact_id) AND
+  (s.period_id = d.period_id) AND
+  (s.segment IS NULL);"
+result <- dbGetQuery(connect, q)
+print(result)
+
+```
+
+```{r}
+# Create the WARM segment
+q = "UPDATE
+  segments s,
+  (SELECT contact_id, period_id
+   FROM   segments
+   WHERE  (segment = 'NEW')    OR
+          (segment = 'AUTO')   OR
+          (segment = 'BOTTOM') OR
+          (segment = 'TOP')) AS a
+SET
+  s.segment = 'WARM'
+WHERE
+  (s.contact_id = a.contact_id) AND
+  (s.period_id = a.period_id - 1) AND
+  (s.segment IS NULL);"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+```{r}
+# Create the LOST segment
+query = "UPDATE
+  segments s,
+  (SELECT contact_id, period_id
+   FROM   segments
+   WHERE  Segment = 'WARM') AS a
+SET
+  s.segment = 'COLD'
+WHERE
+  (s.contact_id = a.contact_id) AND
+  (s.period_id = a.period_id - 1) AND
+  (s.segment IS NULL);"
+data = dbGetQuery(connect, query)
+print(data)
+```
+
+```{r}
+# Create the LOST segment
+query = "UPDATE
+  segments s,
+  (SELECT contact_id, period_id
+   FROM   segments
+   WHERE  segment = 'COLD') AS a
+SET
+  s.segment = 'LOST'
+WHERE
+  (s.contact_id = a.contact_id) AND
+  (s.period_id  < a.period_id)  AND
+  (s.segment IS NULL);"
+data = dbGetQuery(connect, query)
+print(data)
+```
+```{r}
+# Create the VETERAN segment first_act_date < 20080625
+query = "UPDATE
+  segments
+SET
+  segment = 'VETERAN'
+WHERE contact_id IN (
+    SELECT contact_id
+    FROM acts
+    GROUP BY contact_id
+    HAVING MIN(act_date) < 20080625
+) AND segment IS NULL;"
+data = dbGetQuery(connect, query)
+print(data)
+```
+
+```{r}
+# Counting the number of NULLs in segment
+q = " SELECT COUNT(*) as total_rows, COUNT(segment) as filled_rows
+FROM segments; "
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+
+```{r}
+# Count segment members per period
+q = " SELECT period_id, Segment, COUNT(*)
+FROM segments
+GROUP BY 1, 2
+ORDER BY 2, 1 DESC;"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+
+```{r}
+# In which segments were donors last period,
+# and where are they now?
+q = " SELECT old.segment as 'last_year', new.segment as 'this_year', COUNT(new.segment) as 'count'
+FROM segments old,
+     segments new
+WHERE (old.contact_id = new.contact_id) AND
+      (old.period_id = 1) AND
+      (new.period_id = 0)
+GROUP BY 1, 2
+ORDER BY 1, 2;"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+
+```{r}
+# Report the financial contribution of each segment
+q = "SELECT
+  s.segment,
+  COUNT(DISTINCT(s.contact_id)) AS 'num_donors',
+  COUNT(a.amount)               AS 'num_donations',
+  CEILING(AVG(a.amount))        AS 'avg_amount',
+  CEILING(SUM(a.amount))        AS 'total_generosity'
+FROM
+  segments s,
+  periods p,
+  acts a
+WHERE
+  (s.contact_id = a.contact_id) AND
+  (s.period_id = 0) AND
+  (p.period_id = 0) AND
+  (a.act_date >= p.first_day) AND
+  (a.act_date <= p.last_day)
+GROUP BY 1
+ORDER BY total_generosity DESC;"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+
+```{r}
+# Report the financial contribution in "period 0"
+# (last 12 months) of each segment in period 1 (a year before)
+q = " SELECT
+  s.segment,
+  COUNT(DISTINCT(s.contact_id)) AS 'num_donors',
+  COUNT(a.amount)               AS 'num_donations',
+  CEILING(AVG(a.amount))        AS 'avg_amount',
+  CEILING(SUM(a.amount))        AS 'total_generosity'
+FROM
+  segments s,
+  periods p,
+  acts a
+WHERE
+  (s.contact_id = a.contact_id) AND
+  (s.period_id = 1) AND
+  (p.period_id = 0) AND
+  (a.act_date >= p.first_day) AND
+  (a.act_date <= p.last_day)
+GROUP BY 1
+ORDER BY total_generosity DESC; "
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+
+```{r}
+# looking at who is still null
+q = " SELECT
+  s.segment, s.contact_id, a.amount, a.act_date, f.first_act
+FROM
+  segments s,
+  periods p,
+  acts a,
+  (SELECT contact_id, MIN(act_date) AS first_act
+  FROM acts
+  GROUP BY 1) AS f
+WHERE
+  (f.contact_id = s.contact_id) AND
+  (s.contact_id = a.contact_id) AND
+  (s.period_id = 1) AND
+  (p.period_id = 0) AND
+  (a.act_date >= p.first_day) AND
+  (a.act_date <= p.last_day) AND
+  (s.segment IS NULL);"
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+
+```{r}
+# How much money is collected every year?
+q = " SELECT *
+FROM segments
+WHERE
+  contact_id IN (
+      SELECT s.contact_id
+      FROM
+          segments s,
+          periods p,
+          acts a
+      WHERE
+          (s.contact_id = a.contact_id) AND
+          (s.period_id = 1) AND
+          (p.period_id = 0) AND
+          (a.act_date >= p.first_day) AND
+          (a.act_date <= p.last_day) AND
+          (s.segment IS NULL)
+  );
+ "
+result <- dbGetQuery(connect, q)
+print(result)
+```
+```{r}
+q = " SELECT *
+FROM segments
+WHERE ISNULL(segments.segment);
+ "
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+```{r}
+# Where do our donors live?
+q = " 
+SELECT town_clean, COUNT(id) as num_donors
+FROM contacts
+WHERE id IN (
+    SELECT DISTINCT contact_id
+    FROM acts
+    )
+GROUP BY town_clean
+ORDER BY num_donors DESC;
+ "
+result <- dbGetQuery(connect, q)
+print(result)
+```
+
+

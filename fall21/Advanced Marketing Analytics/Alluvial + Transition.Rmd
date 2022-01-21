@@ -1,0 +1,207 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+library("DBI")
+library(dplyr)
+library(ggalluvial)
+```
+
+```{r}
+
+connect <- dbConnect(RMariaDB::MariaDB(), group = "charity_small")
+result <- dbGetQuery(connect, "USE ma_charity_small;")
+print(result)
+```
+
+```{r}
+# In which segments were donors last period,
+# and where are they now?
+q = " SELECT old.segment as 'last_year', new.segment as 'this_year', COUNT(new.segment) as 'freq'
+FROM segments old,
+     segments new
+WHERE (old.contact_id = new.contact_id) AND
+      (old.period_id = 1) AND
+      (new.period_id = 0)  
+GROUP BY 1, 2
+ORDER BY 1, 2;"
+result <- dbGetQuery(connect, q)
+df <- as.data.frame(result, fix.empty.names = TRUE)
+print(df)
+```
+```{r}
+is.na.data.frame(df)
+```
+
+```{r}
+#df.cols <- sapply(df, is.character)
+#df[, df.cols] <- sapply(df[, df.cols], as.factor)
+df$this_yearF <-as.factor(df$this_year)
+df$last_yearF <-as.factor(df$last_year)
+df$freqI <-as.integer(df$freq)
+df
+```
+```{r}
+ggplot(data = df,
+       aes(axis1 = last_yearF, axis2 = this_yearF, y = freqI)) +
+  geom_alluvium(aes(fill = last_yearF)) +
+  geom_stratum() +
+  geom_text(stat = "stratum",
+            aes(label = after_stat(stratum))) +
+  scale_x_discrete(labels=c("this_yearF", "last_yearF"), 
+                   breaks=1:2,
+                   expand = c(0.15, 0.05)) +
+  guides(fill = guide_legend(title = "Segments"))+
+  theme(panel.background = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_text(size=20)) 
+```
+
+
+```{r}
+library(hash)
+## hash-2.2.6 provided by Decision Patterns
+h <- hash() 
+l <- c("AUTO", "BOTTOM", "COLD", "LOST", "NEW", "TOP", "VETERAN", "WARM", "TBFOUND")
+
+#init
+for (i in l) {
+  h[i] = 0
+}
+h
+```
+
+
+```{r}
+for(i in 1:nrow(df)) 
+  h[df[i, "last_yearF"]] <- values(h[df[i, "last_yearF"]]) + df[i, "freqI"] 
+h
+```
+
+```{r}
+#round each value from its current frequency over total from hash key 
+df2 <- df
+df2$freq <-as.integer(df2$freq)
+for(i in 1:nrow(df2)) 
+  df2[i, "freq"] <-  df2[i, "freqI"]/values(h[df2[i, "last_yearF"]], keys = NULL ) *100 
+df2$freq <- round(df2$freq, 2)
+df2
+```
+
+
+```{r}
+ggplot(data = df2, aes(x=this_yearF, y=last_yearF, fill=freq)) + 
+  geom_raster(aes(fill = freq), 
+            lwd = 1.5,
+            linetype = 1) +
+  scale_fill_gradient2(low = "white",
+                       high = "light blue") +
+  geom_text(aes(label = freq), 
+            color = "black", 
+            size = 4) +
+  
+  guides(fill = guide_colourbar(barwidth = 0.5,
+                                barheight = 20, 
+                                title="Freq (%)"), 
+         direction = -1) +
+  
+  labs(title = "Likelihood of Transitioning from One Segment to Another",
+       y = "Last Year (2017)",
+       x = "This Year (2018)") +
+  
+  theme(panel.background = element_blank()) 
+```
+```{r}
+df3 <- df
+df3$freq <-as.integer(df3$freq)
+for(i in 1:nrow(df3)) 
+  df3[i, "freq"] <-  df3[i, "freqI"]/values(h[df3[i, "last_yearF"]], keys = NULL ) 
+df3
+```
+```{r}
+z <- hash()
+l <- c("AUTO", "BOTTOM", "COLD", "LOST", "NEW", "TOP", "VETERAN", "WARM", "TBFOUND")
+
+for (i in l) {
+  z[i] <- 0
+  for (j in l)  {
+    s <-  paste(i,j)
+    z[s] <-  0
+  }
+}
+for(i in 1:nrow(df3)) 
+  z[df3[i, "this_yearF"]] <- values(z[df3[i, "this_yearF"]]) + df3[i, "freqI"] 
+z
+```
+
+```{r}
+#init
+l <- c("AUTO", "BOTTOM", "COLD", "LOST", "NEW", "TOP", "VETERAN", "WARM", "TBFOUND")
+df3$next_yearI <- 0
+df3$next_yearF <- df3$last_yearF
+df3
+```
+```{r}
+#hash combination of words into a dictionary with the values for next year
+for (n in  1:nrow(df3))  {
+  for (i in l) {
+    j <- df3[n, "this_yearF"]
+    s <-  paste(i,j)
+    x <- as.integer(values(z[i])) 
+    f <- df3[which(df3$this_yearF ==  as.character(j) & df3$last_yearF == i), ]$freq
+    z[s] <- x * f
+  }
+}
+z
+```
+
+
+```{r}
+#put the next year values according to their hashed values
+for (n in  1:nrow(df3))  {
+  s <-  paste(as.character(df3[n, "next_yearF"]),  as.character(df3[n, "this_yearF"]))
+  df3[n, "next_yearI"] <- as.double(values(z[s]))
+}
+
+#remove all NA values
+df3[is.na(df3)] <- 0
+df3$next_year_alluvial <- df3$this_yearF
+df3$this_year_alluvial <- df3$next_yearF
+df3
+
+```
+
+```{r}
+ggplot(data = df3,
+       aes(axis1 = this_year_alluvial, axis2 = next_year_alluvial, y = next_yearI)) +
+  geom_alluvium(aes(fill = this_year_alluvial)) +
+  geom_stratum() +
+  geom_text(stat = "stratum",
+            aes(label = after_stat(stratum))) +
+  scale_x_discrete(labels=c("this_yearF", "next_yearF"), 
+                   breaks=1:2,
+                   expand = c(0.15, 0.05)) +
+  guides(fill = guide_legend(title = "Segments"))+
+  theme(panel.background = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_text(size=20)) 
+```
+
+```{r}
+#2019 values
+z <- hash()
+l <- c("AUTO", "BOTTOM", "COLD", "LOST", "NEW", "TOP", "VETERAN", "WARM", "TBFOUND")
+
+for (i in l) {
+  z[i] <- 0 
+}
+for(i in 1:nrow(df3)) 
+  z[df3[i, "next_year_alluvial"]] <- values(z[df3[i, "next_year_alluvial"]]) + df3[i, "next_yearI"] 
+z
+```
+

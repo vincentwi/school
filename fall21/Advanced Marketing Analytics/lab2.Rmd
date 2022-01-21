@@ -1,0 +1,180 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+install.packages("fpp")
+install.packages("fpp3")
+library("fpp")
+library("fpp3")
+```
+
+
+```{r}
+y <- tsibble(
+  Year = 2015:2019,
+  Observation = c(123, 39, 78, 52, 110),
+  index = Year
+)
+View(y)
+```
+
+
+```{r}
+ts_data = seq(1:120)
+sp_ts <- ts(ts_data, start=c(2014,7), frequency = 12)
+sp_ts
+```
+
+```{r}
+aus_production
+```
+
+```{r}
+beer_prod = subset(aus_production[c("Quarter", "Beer")], year(Quarter)>2000)
+beer_prod
+```
+
+
+```{r}
+autoplot(beer_prod)
+```
+```{r}
+beer_prod_ts = ts(beer_prod[[2]], 
+                  start=year(beer_prod[[1,1]]), 
+                  frequency = 4)
+plot(beer_prod_ts)
+```
+
+
+```{r}
+gg_lag(beer_prod, 
+       geom="point") + labs(x="lag(Beer, k)")
+?gg_lag
+```
+
+```{r}
+lag.plot(beer_prod_ts, lags=4)
+```
+
+```{r}
+install.packages("deplyr")
+#library("deplyr")
+beer_prod <- aus_production %>%
+  filter(year(Quarter) >=2000)
+
+beer_prod %>%
+  gg_lag(Beer, geom = "point") + labs(x="lag(Beer, k)")
+```
+
+```{r}
+acf(beer_prod_ts, 36)
+```
+
+```{r}
+beer_prod %>%
+  ACF(beer_prod, 36) %>%
+  autoplot() + labs(title= "Aus beer prod")
+```
+
+```{r}
+set.seed(40)
+y <- tsibble(sample = 1:50, wn = rnorm(50), index=sample)
+y %>% autoplot(wn) + labs(title= "White Noise", y=" ")
+```
+
+```{r}
+par(mfrow=c(2, 1))
+plot(hsales)
+acf(hsales, lag.max = 400)
+gglagplot(hsales, do.lines=F, lags=13)
+```
+
+```{r}
+par(mfrow=c(2, 1))
+plot(ustreas)
+acf(ustreas, lag.max = 100)
+gglagplot(ustreas, do.lines=F, lags=13)
+```
+
+```{r}
+par(mfrow=c(2, 1))
+plot(elec)
+acf(elec, lag.max = 100)
+gglagplot(elec, do.lines=F, lags=13)
+```
+
+```{r}
+par(mfrow=c(2, 1))
+plot(dj)
+acf(dj, lag.max = 100)
+gglagplot(dj, do.lines=F, lags=13)
+```
+
+```{r}
+par(mfroq = c(2,1))
+plot(diff(dj))
+acf(diff(dj), lag.max=100)
+gglagplot(diff(dj)/dj, do.lines=F, lags=1)
+```
+
+```{r}
+us_retail_employment <- us_employment %>%
+  filter(year(Month)>1990, Title == "Retail Trade") %>%
+  select(-Series_ID, -Title)
+autoplot(us_retail_employment, Employed) + labs (y="Persons (thousands)", title= "Total employment in US Retail")
+acf(us_retail_employment, lag.max=100)
+```
+
+```{r}
+unique(us_employment["Title"])
+```
+
+```{r}
+gg_season(us_retail_employment)
+gg_subseries(us_retail_employment)
+```
+
+```{r}
+ure_ma = us_retail_employment <- us
+
+ure_ma_12 = ure_ma %>%
+```
+
+```{r}
+us_retail_employment %>% 
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

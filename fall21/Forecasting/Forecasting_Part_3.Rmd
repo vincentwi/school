@@ -1,0 +1,107 @@
+---
+title: "Forecasting"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Please find in our submission files the python code and pytorch based multi-layer LSTM model we used to generate the below data. 
+
+
+# Question 3.1
+##Plots
+
+### plotting our predictions against our training data, we can see that the prediction stays relatively stable earound the 300-600 range. The red line of predictions is slightly above the true data until late 2011 because of the MSE we used to train the model, which gives ~0.52 error, when the true value is 0. 
+The prediction closely follow the general trend of the time series, but does not have the same volitility. We attribute this to the tendency of the model to punish large error residuals. Also, since we only did 1 input of a 28 day "batch", the model essentially acted as an AR(1), without the capability of looking far behind its current state onto values from farther periods, and try to capture long-range dependency. 
+However, for the time series we have, it's an overkill. Plus, its the sales forecast, which is best done if it's in an AR(1) fashion
+```{r}
+knitr::include_graphics("train.png")
+```
+
+
+
+### plotting our predictions against our testing data, we can see that the prediction stays relatively stable earound the 200-400 range. Much of the analysis remains consistent from the previous explanation. 
+Something to note here is the increasing volitility around 2014-9 which properly was captured by the LSTM model that "wobbled" with it. 
+```{r}
+knitr::include_graphics("test.png")
+```
+## Evaluating and Comparing Loss Function
+###Import the data and predictions to calculate statistics
+```{r}
+library(data.table)
+
+#import data
+labels <- fread("/Users/viceroy/Downloads/labels.csv")
+predictions <- fread("/Users/viceroy/Downloads/predictions.csv")
+
+#view structure of data
+str(labels)
+str(predictions)
+
+```
+
+```{r}
+len = length(labels$V2)
+test_index =  round(len* 0.67,0)
+test_index
+```
+
+### MSE
+```{r}
+MSE_total <- mean((labels$V2 - predictions$V2)^2)
+MSE_test <- mean((labels$V2[test_index:len] - predictions$V2[test_index:len])^2)
+
+MSE_total
+MSE_test
+```
+We can see this is much lower in the test set, which is a good sign that the model didn't overfit and generalized well. This makes sense, since when we trained the LSTM model, we used MSE as its loss function. 
+
+
+### RMSE
+```{r}
+RMSE_total <- sqrt(mean((labels$V2 - predictions$V2)^2))
+RMSE_test <- sqrt(mean((labels$V2[test_index:len] - predictions$V2[test_index:len])^2))
+
+RMSE_total
+RMSE_test
+```
+Comparing this results to Question 1.3 we see that this model is considerably better than some of the more traditional models. 
+For example, the LSTM performs better than 
+However, it performs worse than
+This is likely because our model had 512 hidden layers
+
+
+### MAPE
+```{r}
+MAPE_total <- mean(abs((labels$V2 - predictions$V2)/labels$V2)) * 100
+MAPE_test <- mean(abs((labels$V2[test_index:len] - predictions$V2[test_index:len])/labels$V2[test_index:len])) * 100
+
+MAPE_total
+MAPE_test
+```
+
+We get this error because it isn't possible to take the mean of NaN and Infinities, which arise as a result of the first 2 years of "true" labelled data being zeroes. Can't divide by 0!
+```{r}
+abs(labels$V2[0:250] - predictions$V2[0:250])/labels$V2[0:250]
+```
+
+
+
+# Question 3.2
+
+It is possible that other ML/DL model perform well here. 
+For example, BiLSTM XGBoost, LightGBM, and a simple RNN are all feasible. 
+This being said, using a powerful model may not neccessarily give better results. 
+When we were first training our LSTM model, we wanted to add a lot of complex activations and hidden layers. 
+However, we found that - especially for this dataset - the simpler the better.
+Using just one layer gave us around 2.06 RMSE, two layers was 1.75 (as seen above), and 3+ was >1.75. 
+As such we used just 2 layers.
+
+Something else to note is that we could add more features. Feature engineering can greatly improve model performance.
+Things like Lags, Multidimensional Sliding windows and other data from the dataset (calendar, sales, sell prices) could have benefited our model.
+
+
+
+

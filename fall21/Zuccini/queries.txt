@@ -1,0 +1,139 @@
+/*
+use food
+
+2.1
+
+db.getCollectionNames() hands us the collection "products"
+db.products.findOne() shows us the general structure of a product:
+    All the info we would want of a products: ingredients, allergies, nutriments, etc..
+*/
+
+/* 2.2 */
+
+/* 1. */
+db.products.count()
+/* Output: 4802*/
+
+/* 2. */
+db.products.find({ product_name: { $regex: "Sharon’s|sorbet|dutch chocolate", $options: "i" } })
+/* Output:  ... pectin, guar.", "origins_hierarchy" : [ ], "countries_hierarchy" : [ "en:united-states" ], "additives_original_tags" : [ "en:e440" ], "data_sources_imported" : "Databases, database-usda", "additives_old_n" : 1, "data_quality_tags" : [ "en:no-packaging-data", "en:ingredients-percent-analysis-ok", "en:ecoscore-origins-of-ingredients-origins-are-100-percent-unknown", "en:ecoscore-packaging-packaging-data-missing", "en:ecoscore-production-system-no-label" ], "origins" : "", "allergens_from_ingredients" : "", "emb_codes_tags" : [ ], "allergens_from_user" : "(en) ", "categories_imported" : "Desserts, Frozen foods, Frozen desserts", "link" : "", "additives_prev_original_tags" : [ "en:e440", "en:e412" ], "vitamins_tags" : [ ], "labels_lc" : "en", "creator" : "openfoodfacts-contributors", "minerals_tags" : [ ], "traces_tags" : [ ], "ingredients_from_or_that_may_be_from_palm_oil_n" : 0, "new_att_category" : [ "Desserts", "Frozen foods", "Frozen desserts", "Ice creams and sorbets", "Sorbets" ] }*/
+
+/* 3. */
+db.products.find( { _id: "0009073102079"}, {_id:0, total_times_modified: { $sum: { $size:"$last_edit_dates_tags" } }})
+/* Output: { "total_times_modified" : 3 } */
+
+/* 4. */
+db.products.find({"nutriments.sodium" : {$exists : true }}  )
+/* Output ... last_image_t" : 1520506371, "nutrient_levels_tags" : [ ], "allergens_hierarchy" : [ ], "last_editor" : "autorotate-bot", "pnns_groups_2_tags" : [ "unknown", "missing-category" ], "last_modified_by" : null, "ingredients_from_palm_oil_tags" : [ ], "last_modified_t" : 1561463726, "lang" : "fr", "countries_debug_tags" : [ ], "new_att_category" : null }*/
+
+/* 5. */
+db.products.find({"nutriscore_grade" : "c"}  )
+/* Output: ... "grade" : "c", "energy_value" : 632, "fruits_vegetables_nuts_colza_walnut_olive_oils_points" : 0, "saturated_fat" : 6.7, "energy" : 632, "saturated_fat_ratio" : 71.27659574468085, "fiber" : 0, "proteins_points" : 5, "saturated_fat_ratio_value" : 71.3, "sugars_value" : 1.1, "sugars_points" : 0, "sodium" : 344, "fiber_value" : 0, "fiber_points" : 0, "sodium_value" : 344, "score" : 5, "is_cheese" : 0, "energy_points" : 1, "fruits_vegetables_nuts_colza_walnut_olive_oils_value" : 0, "sugars" : 1.1, "is_beverage" : 0 }, "codes_tags" : [ "code-13", "0000069161414", "000006916141x", "00000691614xx", "0000069161xxx", "000006916xxxx", "00000691xxxxx", "0000069xxxxxx", "000006xxxxxxx", "00000xxxxxxxx", "0000xxxxxxxxx", "000xxxxxxxxxx", "00xxxxxxxxxxx", "0xxxxxxxxxxxx" ], "data_sources_tags" : [ "app-yuka", "apps" ], "packagings" : [ ], "ecoscore_tags" : [ "unknown" ], "new_att_category" : [ "Plats préparés", " Entrées", " Coquilles Saint-Jacques" ] }*/
+
+/* 6. */
+db.products.distinct('creator').length
+/* Output: 131 */
+
+/* 7. */
+db.products.aggregate([     
+    {"$group": {"_id": "$creator", "count": { "$sum": 1 }}}, 
+    {"$match": {count: {"$gt": 1}}} 
+])
+/* Output:
+{ "_id" : "romycohen2", "count" : 5 }
+{ "_id" : "hungergames", "count" : 2 }
+{ "_id" : "bredowmax", "count" : 9 }
+{ "_id" : "sebleouf", "count" : 3 }
+{ "_id" : "chris13", "count" : 2 }
+{ "_id" : "openfoodfacts-contributors", "count" : 393 }
+{ "_id" : "ocelias", "count" : 2 }
+{ "_id" : "date-limite-app", "count" : 73 }
+{ "_id" : "beniben", "count" : 11 }
+{ "_id" : "inf", "count" : 31 }
+{ "_id" : "bcatelin", "count" : 2 }
+{ "_id" : "harryji", "count" : 15 }
+{ "_id" : "prepperapp", "count" : 3 }
+{ "_id" : "nutrinet-sante", "count" : 28 }
+{ "_id" : "gildubs", "count" : 4 }
+{ "_id" : "alaetien", "count" : 2 }
+{ "_id" : "agamitsudo", "count" : 3 }
+{ "_id" : "tacinte", "count" : 58 }
+{ "_id" : "neuni", "count" : 12 }
+{ "_id" : "a-avilaaa", "count" : 7 }
+{ "_id" : "b7", "count" : 6 }
+{ "_id" : "veganeamos", "count" : 5 }
+{ "_id" : "org-database-usda", "count" : 421 }
+{ "_id" : "waistline-app", "count" : 19 }
+{ "_id" : "elcoco", "count" : 39 }
+{ "_id" : "omnomnotes-app", "count" : 2 }
+{ "_id" : "kyzh", "count" : 15 }
+{ "_id" : "teolemon", "count" : 45 }
+{ "_id" : "philippeauriach", "count" : 4 }
+{ "_id" : "sarah-erraddahi", "count" : 10 }
+{ "_id" : "kiliweb", "count" : 2156 }
+{ "_id" : "swipe-studio", "count" : 34 }
+{ "_id" : "acistopogm", "count" : 4 }
+{ "_id" : "tacite", "count" : 6 }
+{ "_id" : "romycoh", "count" : 5 }
+{ "_id" : "stephane", "count" : 12 }
+{ "_id" : "quechoisir", "count" : 9 }
+{ "_id" : "foodvisor", "count" : 114 }
+{ "_id" : "grumpf", "count" : 2 }
+{ "_id" : "canieatthis-app", "count" : 14 }
+{ "_id" : "roboto-app", "count" : 6 }
+{ "_id" : "alban14121999", "count" : 6 }
+{ "_id" : "panieravide", "count" : 2 }
+{ "_id" : "usda-ndb-import", "count" : 1077 }
+{ "_id" : "foodorigins", "count" : 2 }
+{ "_id" : "clockwerx", "count" : 13 }
+{ "_id" : "allfitnessfactory-de", "count" : 8 }
+{ "_id" : "halal-app-chakib", "count" : 14 }
+{ "_id" : "vegan-app-chakib", "count" : 2 }
+{ "_id" : "nouky20", "count" : 2 }
+{ "_id" : "malikele", "count" : 3 }
+*/
+
+/* 8. */
+db.products.find().sort( { last_modified_t: -1 } )
+/* Output: ...  "data_quality_bugs_tags" : [ ], "data_quality_errors_tags" : [ ], "lc" : "en", "interface_version_modified" : "20150316.jqm2", "product_name" : "Macédoine mayonnaise", "nova_group_tags" : [ "not-applicable" ], "states_tags" : [ "en:to-be-completed", "en:nutrition-facts-completed", "en:ingredients-to-be-completed", "en:expiration-date-to-be-completed", "en:packaging-code-to-be-completed", "en:characteristics-to-be-completed", "en:origins-to-be-completed", "en:categories-to-be-completed", "en:brands-completed", "en:packaging-to-be-completed", "en:quantity-to-be-completed", "en:product-name-completed", "en:photos-to-be-validated", "en:packaging-photo-to-be-selected", "en:nutrition-photo-selected", "en:ingredients-photo-to-be-selected", "en:front-photo-selected", "en:photos-uploaded" ], "new_att_category" : null }*/
+
+/* 9. Zero */
+db.products.find({ingredients: {$eq: {$size: 1}}})
+/* Output: Empty */
+
+/* 10. */
+db.products.find({ingredients: {$gt: {$size: 19}}})
+/* Output: ... t" : 0, "ps" : 0, "ee" : 0, "lu" : 0, "no" : 0, "mk" : 0, "nl" : 0, "ax" : 0, "tr" : 0, "tn" : 0, "ie" : 0, "pt" : 0, "is" : 0, "fo" : 0, "lb" : 0, "lv" : 0, "se" : 0, "sy" : 0, "je" : 0, "sk" : 0, "us" : 0, "gi" : 0, "cy" : 0, "de" : 0, "lt" : 0, "ua" : 0, "im" : 0, "gr" : 0 }, "origins_from_origins_field" : [ "en:unknown" ] }, "threatened_species" : null, "packaging" : { "non_recyclable_and_non_biodegradable_materials" : 1, "warning" : "packaging_data_missing", "value" : -15 }, "production_system" : { "warning" : "no_label", "labels" : [ ], "value" : 0 } }, "agribalyse" : { "warning" : "missing_agribalyse_match" } }, "nucleotides_prev_tags" : [ ], "ingredients_n_tags" : [ "1", "1-10" ], "sources" : [ { "fields" : [ "product_name_en", "brands", "countries", "serving_size", "ingredients_text_en", "nutrients.energy", "nutrients.proteins", "nutrients.fat", "nutrients.carbohydrates", "nutrients.fiber" ], "id" : "usda-ndb", "import_t" : 1489055653, "url" : "https://api.nal.usda.gov/ndb/reports/?ndbno=45024998&type=f&format=json&api_key=DEMO_KEY", "images" : [ ] } ], "product_name" : "Organic Polenta", "allergens" : "", "new_att_category" : null }*/
+
+/* 11. */
+db.products.find({ _keywords: { "$in" : ["dessert"]} }).count()
+/* Output: 47*/
+
+/* 12. */
+db.products.find({ _keywords: { "$in" : ["chocolate"]} }).count()
+/* Output: 536*/
+
+/* 13. */
+db.products.find({ _keywords: { "$all" : ["chocolate", "dessert"]} }).count()
+/* Output: 3*/
+
+/* 14. */
+db.products.find({ _keywords: { "$in" : ["chocolate", "dessert"]} }).count()
+/* Output: 580 */
+
+/* 15. */
+db.products.aggregate([
+    {
+        $addFields: { 
+            new_att_category: { "$split": [ "$categories", ","] }
+        }
+    },
+    {$out:"products"}
+])
+
+/* 16. */
+db.products.find({ 
+    "nutriscore_grade": "f",
+    "new_att_category": { "$in" : ["palm-oil"]} 
+}).count()
+/* Output: Empty*/

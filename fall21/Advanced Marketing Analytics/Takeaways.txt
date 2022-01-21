@@ -1,0 +1,27 @@
+Takeaways from Ralph's code: 
+1. Degree of influence is measured by how often and how recently a donor has donated 
+2. Recency and frequency do play an important  role in distinguishing high retention customers 
+3. Individuals with no donation record are designated to be non-responsive donors 
+4. Only donors that solicited are the ones who we need to consider for scoring 
+5. Segmentation helps to chuck out donors who appear to be loyal but actually are not (BOTTOM WARM)
+6. The degree of their influence to the donation amount can be weighted to give a new order of influence (Suggest EWMA) 
+7. Average return can help, but it might be prone to unequal weights (Suggest 6)
+8. If the donor is active in the top 10 active campaigns, then the donor is bound to donate anyways (Good sign of loyalty) 
+
+Suggestions: 
+1. Look into response ratio (Donation frequency/Campaign Frequency) 
+2. Donors with a response ratio higher than 1 can be classified as "High target donors" (Though this needs to be looked into) 
+3. Seasonal spikes or the type of donation does not make a difference, so it can be discarded 
+4. We can also label "fresh donors" as those who donated extremely recently (Less than 1 year's time span) 
+5. Look at the scoring for the next year 
+6. Look at the months that are having a high frequency of campaigns and donations
+
+Example: I donate in March & June, and they see the same patterns in the previous years, and then we can use this 
+
+Look at donors who donate monthly and label them as "High response" donors 
+
+For each donor, we look at their behaviour and see their monthly behaviour 
+
+-> Solicitate or not: Customer value 
+-> No. of messages to send 
+-> Allocate messages to different campaign ID based on seasonal behaviour of users 

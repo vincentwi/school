@@ -1,0 +1,535 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "CbJFDrzCHpoU"
+   },
+   "source": [
+    "# Lab 4: Modern CNNs"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "ZCN43CN0HxiK"
+   },
+   "source": [
+    "In this exercise we are going to train a ResNet model on a kaggle dataset which provides pictures with dogs and cats (https://www.kaggle.com/c/dogs-vs-cats/data). The whole dataset contains approximately 25000 images for training and 12000 for testing. For computational reasons and since we just want to explore how ResNet model works, we have provided 1000 images for training and 200 for testing. They can be found in the folders 'DogsCats_Train.zip' and 'DogsCats_Test.zip' respectively."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "ny152QLuZqcX"
+   },
+   "source": [
+    "1) First, connect your drive with the notebook."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 28639,
+     "status": "ok",
+     "timestamp": 1607367854813,
+     "user": {
+      "displayName": "Maria Papadomanolaki",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/AOh14Gi4GHUwVeObF5KIa6wwopWPLq1TtcjUaVSfpQ2Tcw=s64",
+      "userId": "13049055197603200919"
+     },
+     "user_tz": -120
+    },
+    "id": "49ZovkI3cD3W",
+    "outputId": "afef6c9e-ac6a-4e91-a183-e8ec1b8140b1"
+   },
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "import glob\n",
+    "# from google.colab import drive\n",
+    "\n",
+    "# ## connect your drive with the notebook\n",
+    "# drive = drive.mount('/content/drive')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "ZGf7nGqvcdf_"
+   },
+   "source": [
+    "2) Split the training images to train and validation parts."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "id": "u1nHal02cD5y"
+   },
+   "outputs": [
+    {
+     "ename": "IndexError",
+     "evalue": "list index out of range",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mIndexError\u001b[0m                                Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-4-879ea7341494>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;31m##here put your custom destination folder\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0mimages\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mlist\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mglob\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mglob\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mos\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mpath\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mjoin\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"/Users/viceroy/Downloads/DogsCats_Test.zip (Unzipped Files)/DogsCats_Train/*.jpg\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mimages\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m0\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      5\u001b[0m \u001b[0;31m# *****START CODE\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      6\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mIndexError\u001b[0m: list index out of range"
+     ]
+    }
+   ],
+   "source": [
+    "import random\n",
+    "##here put your custom destination folder\n",
+    "images=list(glob.glob(os.path.join(\"drive/My Drive/..../DogsCats_Train/*.jpg\")))\n",
+    "print(images[0])\n",
+    "# *****START CODE\n",
+    "\n",
+    "\n",
+    "# *****END CODE"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "OGOf_aYrc96V"
+   },
+   "source": [
+    "3) Create a dataloader class which receives an index and returns an image and the \n",
+    "corresponding label using the image paths."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "7Mjs15OMc7JV"
+   },
+   "outputs": [],
+   "source": [
+    "from torch.utils.data.dataset import Dataset\n",
+    "from skimage import io\n",
+    "import numpy as np\n",
+    "\n",
+    "class MyDataset(Dataset):\n",
+    "    def __init__(self, image_list):\n",
+    "\n",
+    "        ##Load array of images\n",
+    "        self.images = image_list\n",
+    "\n",
+    "    def __getitem__(self, index):\n",
+    "        ## Get the image-label set \n",
+    "        # *****START CODE\n",
+    "\n",
+    "\n",
+    "        # *****END CODE\n",
+    "        \n",
+    "        return image, label\n",
+    "\n",
+    "    def __len__(self):\n",
+    "        ## return the total number of data samples\n",
+    "        return len(self.images)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "3Ji3ib96ZqhG"
+   },
+   "source": [
+    "4) Call the dataloader for both the training and the validation parts."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "FCpPZs1UdYLu"
+   },
+   "outputs": [],
+   "source": [
+    "from torch.utils.data import DataLoader\n",
+    "\n",
+    "train_dataset = MyDataset(train)\n",
+    "val_dataset = MyDataset(val)\n",
+    "\n",
+    "# *****START CODE\n",
+    "train_dataloader = DataLoader( train_dataset, )\n",
+    "val_dataloader = DataLoader( val_dataset,  )\n",
+    "# *****END CODE"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "uQMYVtx9dir8"
+   },
+   "source": [
+    "5) Take some time to read and understand the following code."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "6kNUSv6Ddljj"
+   },
+   "outputs": [],
+   "source": [
+    "import torch\n",
+    "import torch.nn as nn\n",
+    "\n",
+    "\n",
+    "def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):\n",
+    "    \"\"\"3x3 convolution with padding\"\"\"\n",
+    "    return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,\n",
+    "                     padding=dilation, groups=groups, bias=False, dilation=dilation)\n",
+    "\n",
+    "\n",
+    "def conv1x1(in_planes, out_planes, stride=1):\n",
+    "    \"\"\"1x1 convolution\"\"\"\n",
+    "    return nn.Conv2d(in_planes, out_planes, kernel_size=1, stride=stride, bias=False)\n",
+    "\n",
+    "class BasicBlock(nn.Module):\n",
+    "    expansion = 1\n",
+    "    __constants__ = ['downsample']\n",
+    "\n",
+    "    def __init__(self, inplanes, planes, stride=1, downsample=None, groups=1,\n",
+    "                 base_width=64, dilation=1, norm_layer=None):\n",
+    "        super(BasicBlock, self).__init__()\n",
+    "        if norm_layer is None:\n",
+    "            norm_layer = nn.BatchNorm2d\n",
+    "        if groups != 1 or base_width != 64:\n",
+    "            raise ValueError('BasicBlock only supports groups=1 and base_width=64')\n",
+    "        if dilation > 1:\n",
+    "            raise NotImplementedError(\"Dilation > 1 not supported in BasicBlock\")\n",
+    "        # Both self.conv1 and self.downsample layers downsample the input when stride != 1\n",
+    "        self.conv1 = conv3x3(inplanes, planes, stride)\n",
+    "        self.bn1 = norm_layer(planes)\n",
+    "        self.relu = nn.ReLU(inplace=True)\n",
+    "        self.conv2 = conv3x3(planes, planes)\n",
+    "        self.bn2 = norm_layer(planes)\n",
+    "        self.downsample = downsample\n",
+    "        self.stride = stride\n",
+    "\n",
+    "    def forward(self, x):\n",
+    "        identity = x\n",
+    "\n",
+    "        out = self.conv1(x)\n",
+    "        out = self.bn1(out)\n",
+    "        out = self.relu(out)\n",
+    "\n",
+    "        out = self.conv2(out)\n",
+    "        out = self.bn2(out)\n",
+    "\n",
+    "        if self.downsample is not None:\n",
+    "            identity = self.downsample(x)\n",
+    "\n",
+    "        out += identity\n",
+    "        out = self.relu(out)\n",
+    "\n",
+    "        return out\n",
+    "\n",
+    "class ResNet(nn.Module):\n",
+    "\n",
+    "    def __init__(self, block, layers, num_classes=2, zero_init_residual=False,\n",
+    "                 groups=1, width_per_group=64, replace_stride_with_dilation=None,\n",
+    "                 norm_layer=None):\n",
+    "        super(ResNet, self).__init__()\n",
+    "        if norm_layer is None:\n",
+    "            norm_layer = nn.BatchNorm2d\n",
+    "        self._norm_layer = norm_layer\n",
+    "\n",
+    "        self.inplanes = 64\n",
+    "        self.dilation = 1\n",
+    "        if replace_stride_with_dilation is None:\n",
+    "            # each element in the tuple indicates if we should replace\n",
+    "            # the 2x2 stride with a dilated convolution instead\n",
+    "            replace_stride_with_dilation = [False, False, False]\n",
+    "        if len(replace_stride_with_dilation) != 3:\n",
+    "            raise ValueError(\"replace_stride_with_dilation should be None \"\n",
+    "                             \"or a 3-element tuple, got {}\".format(replace_stride_with_dilation))\n",
+    "        self.groups = groups\n",
+    "        self.base_width = width_per_group\n",
+    "        self.conv1 = nn.Conv2d(3, self.inplanes, kernel_size=7, stride=2, padding=3,\n",
+    "                               bias=False)\n",
+    "        self.bn1 = norm_layer(self.inplanes)\n",
+    "        self.relu = nn.ReLU(inplace=True)\n",
+    "        self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)\n",
+    "        self.layer1 = self._make_layer(block, 32, layers[0])\n",
+    "        self.layer2 = self._make_layer(block, 64, layers[1], stride=2,\n",
+    "                                       dilate=replace_stride_with_dilation[0])\n",
+    "        self.layer3 = self._make_layer(block, 128, layers[2], stride=2,\n",
+    "                                       dilate=replace_stride_with_dilation[1])\n",
+    "        self.layer4 = self._make_layer(block, 256, layers[3], stride=2,\n",
+    "                                       dilate=replace_stride_with_dilation[2])\n",
+    "        self.avgpool = nn.AdaptiveAvgPool2d((1, 1))\n",
+    "        self.fc = nn.Linear(256 * block.expansion, num_classes)\n",
+    "\n",
+    "        for m in self.modules():\n",
+    "            if isinstance(m, nn.Conv2d):\n",
+    "                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')\n",
+    "            elif isinstance(m, (nn.BatchNorm2d, nn.GroupNorm)):\n",
+    "                nn.init.constant_(m.weight, 1)\n",
+    "                nn.init.constant_(m.bias, 0)\n",
+    "\n",
+    "        # Zero-initialize the last BN in each residual branch,\n",
+    "        # so that the residual branch starts with zeros, and each residual block behaves like an identity.\n",
+    "        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677\n",
+    "        if zero_init_residual:\n",
+    "            for m in self.modules():\n",
+    "                if isinstance(m, Bottleneck):\n",
+    "                    nn.init.constant_(m.bn3.weight, 0)\n",
+    "                elif isinstance(m, BasicBlock):\n",
+    "                    nn.init.constant_(m.bn2.weight, 0)\n",
+    "\n",
+    "    def _make_layer(self, block, planes, blocks, stride=1, dilate=False):\n",
+    "        norm_layer = self._norm_layer\n",
+    "        downsample = None\n",
+    "        previous_dilation = self.dilation\n",
+    "        if dilate:\n",
+    "            self.dilation *= stride\n",
+    "            stride = 1\n",
+    "        if stride != 1 or self.inplanes != planes * block.expansion:\n",
+    "            downsample = nn.Sequential(\n",
+    "                conv1x1(self.inplanes, planes * block.expansion, stride),\n",
+    "                norm_layer(planes * block.expansion),\n",
+    "            )\n",
+    "        layers = []\n",
+    "        layers.append(block(self.inplanes, planes, stride, downsample, self.groups,\n",
+    "                            self.base_width, previous_dilation, norm_layer))\n",
+    "        self.inplanes = planes * block.expansion\n",
+    "        for _ in range(1, blocks):\n",
+    "            layers.append(block(self.inplanes, planes, groups=self.groups,\n",
+    "                                base_width=self.base_width, dilation=self.dilation,\n",
+    "                                norm_layer=norm_layer))\n",
+    "\n",
+    "        return nn.Sequential(*layers)\n",
+    "\n",
+    "    def _forward(self, x):\n",
+    "        x = self.conv1(x)\n",
+    "        x = self.bn1(x)\n",
+    "        x = self.relu(x)\n",
+    "        x = self.maxpool(x)\n",
+    "\n",
+    "        x = self.layer1(x)\n",
+    "        x = self.layer2(x)\n",
+    "        x = self.layer3(x)\n",
+    "        x = self.layer4(x)\n",
+    "\n",
+    "        x = self.avgpool(x)\n",
+    "        x = torch.flatten(x, 1)\n",
+    "        x = self.fc(x)\n",
+    "\n",
+    "        return x\n",
+    "\n",
+    "    # Allow for accessing forward method in a inherited class\n",
+    "    forward = _forward\n",
+    "\n",
+    "\n",
+    "def _resnet(arch, block, layers, **kwargs):\n",
+    "    model = ResNet(block, layers, **kwargs)\n",
+    "\n",
+    "    return model\n",
+    "\n",
+    "def resnet18(**kwargs):\n",
+    "    return _resnet('resnet18', BasicBlock, [2, 2, 2, 2], **kwargs)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "-u8n9lJn2Rrd"
+   },
+   "source": [
+    "6) Define the model and its layers"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "-ZjGIUh5doZF"
+   },
+   "outputs": [],
+   "source": [
+    "net_args = {\n",
+    "    \"block\": BasicBlock,\n",
+    "    \"layers\": [2, 2, 2, 2]\n",
+    "}\n",
+    "model = ResNet(**net_args)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "rJ2nnpJldq1X"
+   },
+   "source": [
+    "7) Define optimizer, criterion and number of training epochs"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "NFwuu48HdsA7"
+   },
+   "outputs": [],
+   "source": [
+    "# *****START CODE\n",
+    "optimizer = \n",
+    "criterion = \n",
+    "epochs =\n",
+    "# *****END CODE "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "bii7DqPid7jY"
+   },
+   "source": [
+    "8) Define confusion matrix using tnt package"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "oAHLghsvdaF0"
+   },
+   "outputs": [],
+   "source": [
+    "!pip install torchnet\n",
+    "import torchnet as tnt\n",
+    "\n",
+    "confusion_matrix = tnt.meter.ConfusionMeter(2)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "sO_MfsYJd-0-"
+   },
+   "source": [
+    "9) Create a directory for saving the models and the training progress\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "Ra-GThlvd_nX"
+   },
+   "outputs": [],
+   "source": [
+    "save_folder = 'drive/My Drive/..../models'"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "_bUMKFiveHW8"
+   },
+   "source": [
+    "10) Train the model. (Validate it after each epoch)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "aZFSgdz6fDsr"
+   },
+   "outputs": [],
+   "source": [
+    "# *****START CODE\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "# *****END CODE "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "V-c6ZQjEJPNc"
+   },
+   "source": [
+    "11) Check how it performs on the test set."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "h2whGFBdJTP1"
+   },
+   "outputs": [],
+   "source": [
+    "# *****START CODE\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "# *****END CODE "
+   ]
+  }
+ ],
+ "metadata": {
+  "colab": {
+   "collapsed_sections": [],
+   "name": "Lab_3_Modern_CNNs.ipynb",
+   "provenance": []
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.7"
+  },
+  "latex_envs": {
+   "LaTeX_envs_menu_present": true,
+   "autoclose": false,
+   "autocomplete": true,
+   "bibliofile": "biblio.bib",
+   "cite_by": "apalike",
+   "current_citInitial": 1,
+   "eqLabelWithNumbers": true,
+   "eqNumInitial": 1,
+   "hotkeys": {
+    "equation": "Ctrl-E",
+    "itemize": "Ctrl-I"
+   },
+   "labels_anchors": false,
+   "latex_user_defs": false,
+   "report_style_numbering": false,
+   "user_envs_cfg": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

@@ -1,0 +1,386 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red127\green127\blue127;\red170\green184\blue199;\red206\green122\blue52;
+\red100\green153\blue87;\red134\green186\blue201;}
+{\*\expandedcolortbl;;\csgenericrgb\c49804\c49804\c49804;\csgenericrgb\c66667\c72157\c78039;\csgenericrgb\c80784\c47843\c20392;
+\csgenericrgb\c39216\c60000\c34118;\csgenericrgb\c52549\c72941\c78824;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 //Submission by Vincent Wilmet\cf0 \
+\cf2 //vincent.wilmet@student-cs.fr\cf0 \
+\
+\
+\cf2 //Question 2.1\cf0 \
+\
+\
+\cf3 db.getCollectionNames
+\f1\b \cf4 ()
+\f0\b0 \cf3  \cf2  // our main DB is "openfoodfacts"\cf0 \
+\cf3 db.openfoodfacts.findOne
+\f1\b \cf4 ()
+\f0\b0 \cf2  //run to understand what a full product looks like\cf0 \
+\
+\cf2 /*  \cf0 \
+\cf2 The basic decomposition of the DB consists of 5 major categories\cf0 \
+\
+\cf2 # general information: e.g. code, url, product_name, quantity\cf0 \
+\
+\cf2 # tags: e.g. shape, material, packaging_tags, brands\cf0 \
+\
+\cf2 # ingredients: e.g. ingredients_text, traces, traces_tags\cf0 \
+\
+\cf2 # misc. data: e.g. serving_size, no_nutriments, additives_n\cf0 \
+\
+\cf2 # nutrition facts: e.g. energy_100g, energy-kj_100g, energy-kcal_100g, proteins_100g\cf0 \
+\cf2 */\cf0 \
+\
+\
+\cf2 //Question 2.2.1\cf0 \
+\cf3 db.openfoodfacts.distinct
+\f1\b \cf4 (
+\f0\b0 \cf5 "code"
+\f1\b \cf4 )
+\f0\b0 \cf3 .length\cf0 \
+\cf2 //Output: 4802\cf0 \
+\
+\cf2 //Question 2.2.1\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf3  product_name
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3  $regex
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf5 "Sharon\'92s|sorbet|dutch chocolate"
+\f1\b \cf4 ,
+\f0\b0 \cf3  $options
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf5 "i"\cf3  
+\f1\b \cf4 \}
+\f0\b0 \cf3  
+\f1\b \cf4 \})
+\f0\b0 \cf0 \
+\cf2 /* \{ "_id" : "0009073102048", "update_key" : "ecoscore50", "lc_imported" : "en", "countries_tags" : [ "en:united-states" ], "allergens_tags" : [ ],  ...\cf0 \
+\cf2 \{ "_id" : "0009073102079", "category_properties" : \{  \}, "nutriments" : \{ "fat_serving" : 3.5, "energy-kcal" : 115, "sodium" : 0.016, "sodium_unit" :...\cf0 \
+\cf2 \{ "_id" : "0009073102130", "allergens_from_user" : "(en) ", "data_quality_tags" : [ "en:no-packaging-data", "en:ingredients-percent-...\cf0 \
+\cf2 \{ "_id" : "0009073102222", "ecoscore_tags" : [ "d" ], "nutriscore_data" : \{ "saturated_fat_ratio" : 0, "energy" : 435, "saturated_fat" : 0, "...\cf0 \
+\cf2 \{ "_id" : "0009073102314", "amino_acids_tags" : [ ], "ingredients_original_tags" : [ "en:coconut-cream", "en:water", "en:sugar", ...\cf0 \
+\cf2 \{ "_id" : "0009073102772", "nutrition_grade_fr" : "d", "languages_hierarchy" : [ "en:english" ], "editors_tags" : [ "org-database-usda" ], "complete" : 0, ...\cf0 \
+\cf2 \{ "_id" : "0009073102963", "origins_lc" : "en", "allergens" : "", "expiration_date" : "", "product_name" : "Sharon's, sorbet, mango", "sources" : ... */\cf0 \
+\cf3      \cf0 \
+\cf3      \cf0 \
+\cf2 //Q3\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3  _id
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf5 "0009073102079"
+\f1\b \cf4 \},
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3 _id
+\f1\b \cf4 :
+\f0\b0 \cf6 0
+\f1\b \cf4 ,
+\f0\b0 \cf3  total_times_modified
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3  $sum
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3  $size
+\f1\b \cf4 :
+\f0\b0 \cf5 "$last_edit_dates_tags"\cf3  
+\f1\b \cf4 \}
+\f0\b0 \cf3  
+\f1\b \cf4 \}\})
+\f0\b0 \cf0 \
+\cf2 /* Output: \{ "total_times_modified" : 3 \} */\cf0 \
+\cf3                     \cf0 \
+\cf2 //Q4\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf5 "nutriments.sodium"\cf3  
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3 $exists 
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf4 true\cf3  
+\f1\b \cf4 \}\})
+\f0\b0 \cf0 \
+\cf2 /* Output: many products' _id and other cols\cf0 \
+\cf2 00\cf0 \
+\cf2 000\cf0 \
+\cf2 0000\cf0 \
+\cf2 00000\cf0 \
+\cf2 000000\cf0 \
+\cf2 00000000\cf0 \
+\cf2 0000000000\cf0 \
+\cf2 00000000000 \cf0 \
+\cf2 0000000000000\cf0 \
+\cf2 00000000000003429145 etc...*/\cf0 \
+\
+\cf2 //Q5\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf5 "nutriscore_grade"\cf3  
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf5 "c"
+\f1\b \cf4 \})
+\f0\b0 \cf0 \
+\cf2 /* Output: many products' _id and other cols\cf0 \
+\cf2 00\cf0 \
+\cf2 0000000005166\cf0 \
+\cf2 0000000043595\cf0 \
+\cf2 000000022524\cf0 \
+\cf2 0000000290616\cf0 \
+\cf2 0000000356\cf0 \
+\cf2 00000006\cf0 \
+\cf2 0000001938067 \cf0 \
+\cf2 00000038\cf0 \
+\cf2 0000005029525 etc...*/\cf0 \
+\
+\cf2 //Q6\cf0 \
+\cf3 db.openfoodfacts.distinct
+\f1\b \cf4 (
+\f0\b0 \cf5 'creator'
+\f1\b \cf4 )
+\f0\b0 \cf3 .length\cf0 \
+\cf2 // Output: 131\cf0 \
+\
+\cf2 //Q7\cf0 \
+\cf3 db.openfoodfacts.aggregate
+\f1\b \cf4 ([\{
+\f0\b0 \cf5 "$group"
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf5 "_id"
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf5 "$creator"
+\f1\b \cf4 ,
+\f0\b0 \cf3  \cf5 "count"
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3  \cf5 "$sum"
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf6 1\cf3  
+\f1\b \cf4 \}\}\},
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf5 "$match"
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3 count
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf5 "$gt"
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf6 1
+\f1\b \cf4 \}\}\}
+\f0\b0 \cf3  
+\f1\b \cf4 ])
+\f0\b0 \cf0 \
+\cf2 /* Output: many rows\cf0 \
+\cf2 \{ "_id" : "romycohen2", "count" : 5 \}\cf0 \
+\cf2 \{ "_id" : "hungergames", "count" : 2 \}\cf0 \
+\cf2 \{ "_id" : "bredowmax", "count" : 9 \}\cf0 \
+\cf2 \{ "_id" : "sebleouf", "count" : 3 \}\cf0 \
+\cf2 \{ "_id" : "chris13", "count" : 2 \} etc... */\cf0 \
+\
+\cf2 //Q8\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 ()
+\f0\b0 \cf3 .sort
+\f1\b \cf4 (\{
+\f0\b0 \cf3 last_modified_t
+\f1\b \cf4 :
+\f0\b0 \cf3  -\cf6 1
+\f1\b \cf4 \})
+\f0\b0 \cf0 \
+\cf2 /* Output: many products' _id and other cols\cf0 \
+\cf2 000123456789\cf0 \
+\cf2 0003128296\cf0 \
+\cf2 00053334\cf0 \
+\cf2 00043298\cf0 \
+\cf2 0008577002892\cf0 \
+\cf2 00038492\cf0 \
+\cf2 00030861\cf0 \
+\cf2 000000002083 \cf0 \
+\cf2 0009542436148\cf0 \
+\cf2 000010 etc...*/\cf0 \
+\
+\cf2 //Q9\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf3 ingredients_n
+\f1\b \cf4 :\{
+\f0\b0 \cf3 $eq
+\f1\b \cf4 :
+\f0\b0 \cf6 1
+\f1\b \cf4 \}\},
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3 product_name
+\f1\b \cf4 : 
+\f0\b0 true
+\f1\b \})
+\f0\b0 \cf0 \
+\cf2 /* Output:\cf0 \
+\cf2 \{ "_id" : "000", "product_name" : "hemp seeds" \}\cf0 \
+\cf2 \{ "_id" : "0000000016094", "product_name" : "Organic Polenta" \}\cf0 \
+\cf2 \{ "_id" : "0000000016117", "product_name" : "Organic Long Grain White Rice" \}\cf0 \
+\cf2 \{ "_id" : "0000000016612", "product_name" : "Organic Adzuki Beans" \}\cf0 \
+\cf2 \{ "_id" : "0000000016650", "product_name" : "Organic Penne Pasta" \}\cf0 \
+\cf2 \{ "_id" : "0000000016933", "product_name" : "Organic Golden Flax Seeds" \}\cf0 \
+\cf2 \{ "_id" : "0000000018050", "product_name" : "Organic Hazelnuts" \}\cf0 \
+\cf2 \{ "_id" : "0000000018197", "product_name" : "Lotus Organic Brown Jasmine Rice" \}\cf0 \
+\cf2 \{ "_id" : "0000000018227", "product_name" : "Organic Oat Groats" \} etc... */\cf0 \
+\
+\cf2 //Q10\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf3 ingredients
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3 $gt
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3 $size
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf6 19
+\f1\b \cf4 \}\}\})
+\f0\b0 \cf0 \
+\cf2 /* Output: many products' _id and other cols\cf0 \
+\cf2 00\cf0 \
+\cf2 000 \cf0 \
+\cf2 0000000000000\cf0 \
+\cf2 0000000000000000000000\cf0 \
+\cf2 00000000000003429145\cf0 \
+\cf2 00000000001\cf0 \
+\cf2 0000000000100\cf0 \
+\cf2 0000000001199 \cf0 \
+\cf2 0000000001663\cf0 \
+\cf2 0000000002264 etc...*/\cf0 \
+\
+\cf2 //Q11\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf5 "_keywords"
+\f1\b \cf4 :
+\f0\b0 \cf5 "dessert"
+\f1\b \cf4 \})
+\f0\b0 \cf3 .count
+\f1\b \cf4 ()
+\f0\b0 \cf0 \
+\cf2 // Output: 47 \cf0 \
+\
+\cf2 //Q12\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf5 "_keywords"
+\f1\b \cf4 :
+\f0\b0 \cf5 "chocolate"
+\f1\b \cf4 \})
+\f0\b0 \cf3 .count
+\f1\b \cf4 ()
+\f0\b0 \cf3  \cf0 \
+\cf2 // Output: 536\cf0 \
+\
+\cf2 //Q13\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf3  \cf5 "_keywords"
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3  \cf5 "$all"\cf3  
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 [
+\f0\b0 \cf5 "chocolate"
+\f1\b \cf4 ,
+\f0\b0 \cf3  \cf5 "dessert"
+\f1\b \cf4 ]\}
+\f0\b0 \cf3  
+\f1\b \cf4 \})
+\f0\b0 \cf3 .count
+\f1\b \cf4 ()
+\f0\b0 \cf0 \
+\cf2 // Output: 3 \cf0 \
+\
+\cf2 //Q14\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf3  \cf5 "_keywords"
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 \{
+\f0\b0 \cf3  \cf5 "$in"\cf3  
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 [
+\f0\b0 \cf5 "chocolate"
+\f1\b \cf4 ,
+\f0\b0 \cf3  \cf5 "dessert"
+\f1\b \cf4 ]\}
+\f0\b0 \cf3  
+\f1\b \cf4 \})
+\f0\b0 \cf3 .count
+\f1\b \cf4 ()
+\f0\b0 \cf0 \
+\cf2 // Output: 580 \cf0 \
+\
+\cf2 //Q15\cf0 \
+\cf3 db.openfoodfacts.updateMany
+\f1\b \cf4 (\{\},\{
+\f0\b0 \cf5 '$set'
+\f1\b \cf4 :\{
+\f0\b0 \cf5 "new_att_category"
+\f1\b \cf4 :\{
+\f0\b0 \cf5 "$split"
+\f1\b \cf4 :
+\f0\b0 \cf3  
+\f1\b \cf4 [
+\f0\b0 \cf5 "$categories"
+\f1\b \cf4 ,
+\f0\b0 \cf3  \cf5 ", "\cf3  
+\f1\b \cf4 ]\}\}\},
+\f0\b0 false
+\f1\b ,
+\f0\b0 true
+\f1\b )
+\f0\b0 \cf0 \
+\cf2 // Output:  \{ "acknowledged" : true, "matchedCount" : 4802, "modifiedCount" : 4802 \}\cf0 \
+\
+\cf2 //Q16\cf0 \
+\cf3 db.openfoodfacts.find
+\f1\b \cf4 (\{
+\f0\b0 \cf5 "nutriscore_grade"
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf5 "F"
+\f1\b \cf4 ,
+\f0\b0 \cf3  \cf5 "new_att_category"
+\f1\b \cf4 :
+\f0\b0 \cf3  \cf5 "palm-oil"
+\f1\b \cf4 \})
+\f0\b0 \cf3 .count
+\f1\b \cf4 ()
+\f0\b0 \cf3  \
+\cf2 // Output: 0\cf0 \
+\
+\
+}

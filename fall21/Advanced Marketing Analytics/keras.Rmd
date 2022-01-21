@@ -1,0 +1,23 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+devtools::install_github("rstudio/tensorflow")
+devtools::install_github("rstudio/keras")
+```
+
+
+```{r}
+tensorflow::install_tensorflow()
+tensorflow::tf_config()
+```
+
+
+```{r}
+library(keras)
+library(tensorflow)
+use_condaenv("keras-tf", required = T)
+```
+
