@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'BerninoSemi';
+  src: url("../fonts/BerninoSans-Web-Semibold.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/BerninoSans-Web-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/BerninoSans-Web-Semibold.woff2") format("woff2"), url("../fonts/BerninoSans-Web-Semibold.woff") format("woff");
+  /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: 'BerninoSemiItalic';
+  src: url("../fonts/BerninoSans-Web-SemiboldItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/BerninoSans-Web-SemiboldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/BerninoSans-Web-SemiboldItalic.woff2") format("woff2"), url("../fonts/BerninoSans-Web-SemiboldItalic.woff") format("woff");
+  /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: 'Bernino';
+  src: url("../fonts/BerninoSans-Web-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/BerninoSans-Web-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/BerninoSans-Web-Regular.woff2") format("woff2"), url("../fonts/BerninoSans-Web-Regular.woff") format("woff");
+  /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: 'BerninoItalic';
+  src: url("../fonts/BerninoSans-Web-Italic.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/BerninoSans-Web-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/BerninoSans-Web-Italic.woff2") format("woff2"), url("../fonts/BerninoSans-Web-Italic.woff") format("woff");
+  /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: 'CooperLight';
+  src: url("../fonts/cooperhewitt-light-webfont.eot");
+  src: url("../fonts/cooperhewitt-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cooperhewitt-light-webfont.woff2") format("woff2"), url("../fonts/cooperhewitt-light-webfont.woff") format("woff"), url("../fonts/cooperhewitt-light-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CooperMedium';
+  src: url("../fonts/cooperhewitt-medium-webfont.eot");
+  src: url("../fonts/cooperhewitt-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cooperhewitt-medium-webfont.woff2") format("woff2"), url("../fonts/cooperhewitt-medium-webfont.woff") format("woff"), url("../fonts/cooperhewitt-medium-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CooperMediumItalic';
+  src: url("../fonts/cooperhewitt-mediumitalic-webfont.eot");
+  src: url("../fonts/cooperhewitt-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cooperhewitt-mediumitalic-webfont.woff2") format("woff2"), url("../fonts/cooperhewitt-mediumitalic-webfont.woff") format("woff"), url("../fonts/cooperhewitt-mediumitalic-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
