@@ -1,0 +1,80 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(ggplot2)
+library(rgl)
+
+ozone <- read.table("~/Downloads/ozone.txt",header=T)
+
+x <- ozone[,c("T12","maxO3","wind","rain","Wx12")]
+
+summary(x)
+```
+
+
+```{r}
+CI = 
+cor.test(airquality$Ozone,airquality$Wind,conf.level=0.99,method="pearson")
+```
+
+```{r}
+plot3d(ozone[,"T12"],ozone[,"Wx12"],ozone[,"maxO3"],radius=2,
+xlab="T12",ylab="Wx12",zlab="maxO3",type="s")
+```
+
+
+
+```{r}
+sapply(ozone, mean) # moyennes
+sapply(ozone, sd) # écarts-types
+boxplot(ozone[,2:4]) # boîtes par groupe
+boxplot(ozone[,5:7])
+boxplot(ozone[,8:10])
+boxplot(ozone[,c(1,11)])
+```
+
+
+```{r}
+qplot(T12, maxO3, data = ozone, geom = c("point", "smooth"))
+qplot(maxO3, data = ozone, fill = df$rain)
+qplot(maxO3, data = ozone, geom = "density", color = df$wind)
+qplot(T12, maxO3, data = ozone, facets  = df$wind)
+qplot(maxO3, data = ozone, facets  = df$rain)
+qplot(T12, maxO3, data = ozone, color = df$pluie) + geom_smooth(method= "lm")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

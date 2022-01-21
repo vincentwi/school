@@ -1,0 +1,21 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+a <- data.frame(a1=1:4, a2=factor(c("yes", "no", "yes", "no")), 
+                a3=c(TRUE, TRUE, FALSE, FALSE))
+a
+```
+
+```{r echo = T, results = 'hide'}
+a$a1
+a[1]
+a[1,2]
+```
+

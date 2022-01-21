@@ -1,0 +1,35 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+df <- read.csv("APM_Returns.csv")
+head(df)
+```
+#Summary Statistics
+```{r}
+#Question 1
+ave_i <- mean(df$MMM)
+std_i <-  sd(df$MMM)
+plot(x = ave_i, y = std_i, xlab = "avg returns" , ylab = "std", xlim = c(-10,10))
+
+```
+
+```{r}
+cov/var
+```
+
+
+#Linear Regression
+
+
+
+
+
+
+

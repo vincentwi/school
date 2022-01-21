@@ -1,0 +1,46 @@
+---
+title: "Exam (Sauraj Verma)"
+output: html_document
+---
+
+
+# Question 1
+```{r}
+#Returns the path of the desktop
+getwd()
+```
+```{r}
+#Find the quantiles
+maxO3 <- data$maxO3
+quantile(maxO3)
+```
+The first quantile is 70.75, the median is 81.50 and the third quantile is 106.00
+
+Let us check if "maxO3" is Gaussian
+```{r}
+hist(maxO3)
+```
+```{r}
+#Mean and standard deviation of the data 
+mean(maxO3)
+sd(maxO3)
+```
+
+Usually for skewed distributions, the mean is often not a best measure of central tendency since mean is scale-variant, causing it to be inflated on the basis of how far the values stretch, hence in certain skewed situations, it is better to use median too.
+
+#Executing the command "getwd"
+```{r}
+getwd()
+```
+
+#Observing the ozone concentration levels from the previous day
+```{r}
+boxplot(data$maxO3y, col="blue", ylab="Yesterday's concentration", main="Ozone concentration observed the day before (B00780619)")
+```
+```{r}
+#Let us observe if the data is Gaussian or not
+real_data <- rnorm(112, mean(data$maxO3y),sd(data$maxO3y))
+qqplot(data$maxO3y, real_data)
+
+```
+LLooking at the QQ plot, it is obvious that the distribution is not Gaussian since there are fat tails on the right side of the curve, leading the data to be right-skewed, and making the visual inspection valid that the data is not Gaussian.

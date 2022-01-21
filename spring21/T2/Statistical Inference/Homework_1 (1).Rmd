@@ -1,0 +1,259 @@
+---
+title: "R Notebook"
+output: pdf_document
+---
+
+```{r}
+library(fitdistrplus)
+```
+
+# Simulation, Asymptotic behavior
+## a)
+```{r fig.height=3, fig.width=7}
+library(MASS)
+library(survival)
+library(fitdistrplus)
+
+for (n in c(10, 100, 1000))
+{
+  my_poisson <- rpois(n, 5)
+  hist(my_poisson, main=paste("Histogram of n=", n, sep=""))
+  plot(fitdist(my_poisson, "pois"))
+}
+```
+
+## b)
+```{r fig.height=3, fig.width=7}
+for (n in c(10, 100, 1000))
+{
+  simulation <- lapply(1:1000, function(x) rpois(n, 5))
+  simulation_mean <- sapply(simulation, mean)
+  hist(simulation_mean, main=paste("Histogram of n=", n, sep=""))
+}
+```
+
+## c)
+As N increases, we can see it converges towards the Normal Distribution. Confirms the Central Limit Theorem.
+
+# Statistical approach and model
+
+First group: $X_1(x),...,X_n(x) \sim Binomial(n,p)$, where n=11,034 and $p = \frac{189}{11034} = 0.017$.\
+Second group: $Y_1(x),...,Y_n(x) \sim Binomial(n,p)$, where n=11,037 and $p = \frac{104}{11037} = 0.009$.\
+
+```{r fig.height=3, fig.width=7}
+success <- 0:300
+x <- dbinom(success, size=11034, prob=.017)
+y <- dbinom(success, size=11037, prob=.009)
+plot(success, y, type='h')
+lines(success, x, type='h', col="green")
+```
+
+We tried several methods
+
+## Z-score method
+We say that our first group is our true group.
+
+$$
+H_0 = \text{we dont observe a difference} \\
+H_a = \text{there is a difference} \\
+$$
+
+$$
+\begin{aligned}
+P( X \le 104) \sim Bin(11034, 0.017)
+&= P(Z \le \frac{104 - \mu}{\sigma}) \\
+&= P(Z \le \frac{104 - 189}{\sqrt{n*p*q}}) \\
+&= P(Z \le \frac{104 - 189}{\sqrt{11034 * 0.017 * \frac{(11034-189)}{11034}}}) \\
+&= P(Z \le \frac{104 - 189}{13.615}) \\
+&= P(Z \le -6.243) \\
+&\approx 0 <= \alpha (0.05) \text { we can reject the null hypothesis.} \\
+\end{aligned}
+$$
+
+Taking an aspirin is statistically significant to not taking aspirin.
+
+## Confidence Interval method
+$n_1 = 104, n=11037, \hat{p}=\frac{104}{11037}=0.0094, z=1.96 \text{ when } \alpha=0.05$.\
+
+Wald Theorem:
+$$
+\begin{aligned}
+\hat{p} \pm Z \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+&= 0.0094 \pm 1.96 \sqrt(\frac{0.0094(0.9906)}{11037}) \\
+&= (0.007599, 0.112) \text{ with }95\% \\
+&= (85.855, 123.58)
+\end{aligned}
+$$
+Thus, mean not within the confidence intervals.
+
+# Algorithm for simulation
+## a)
+General Quantile Formula.
+$$
+Q(P) = inf\{x \in R: P \le F(x) \}
+$$
+
+Quantile Function of the Uniform Distribution.
+$$
+F^{-1}(U) = Q(U) = inf\{x \in R: U \le F(x) \}
+$$
+
+## b)
+Question is asking how to utilize a sample from a uniform distribution in an exponential one.
+
+The Exponential Distribution,
+$$
+F(X) = 1 - e^{-\lambda x}
+$$
+
+We have that,
+$$
+\begin{aligned}
+F^{-1}(U) 
+&= inf\{x \in R: U \le F(x) \} \\
+&= inf\{x \in R: U \le 1 - e^{-\lambda x} \} \\
+&= inf\{x \in R: 1 - U \ge e^{-\lambda x} \} \\
+&= inf\{x \in R: log(1 - U) \ge log(e^{-\lambda x}) \} \\
+&= inf\{x \in R: log(1 - U) \ge -\lambda x \} \\
+&= inf\{x \in R: \frac{log(1 - U)}{\lambda} \ge -x \} \\
+&= inf\{x \in R: -\frac{log(1 - U)}{\lambda} \le x \} \\
+&= -\frac{log(1 - U)}{\lambda} \\
+\end{aligned}
+$$
+
+Our Algorithm
+1. Create a Sample from a Uniform Distribution. \
+2. Use the sample data as input for the $F^{-1}(U)$. \
+
+c)
+```{r fig.height=3, fig.width=7}
+exp <- function(lambda=2, size=1000)
+{
+  # Create sample size
+  sample <- runif(size)
+  # Create sample using the inverse
+  inverse <- -(log(1-sample)/lambda)
+  exp <- rexp(size, rate=5)
+  hist(inverse, prob=TRUE, main="Inverse")
+}
+exp(2, 1000)
+```
+
+d)
+
+Our Algorithm
+1. Create a Sample from a Uniform Distribution. \
+2. Use the sample data as input for the $F^{-1}(U)$. \
+
+We have the PMF of the Cauchy distribution 
+$$
+f(x) = \frac{1}{\pi \gamma} \frac{\gamma^2}{(x-x_0)^2 + \gamma^2}
+$$
+
+CDF of the Cauchy distribution
+$$
+F(x) = \frac{1}{\pi} arctan(\frac{x-x_0}{\gamma}) + \frac{1}{2}
+$$
+
+We have that,
+$$
+\begin{aligned}
+F^{-1}(U) 
+&= inf\{x \in R: U \le F(x) \} \\
+&= inf\{x \in R: U \le \frac{1}{\pi} arctan(\frac{x-x_0}{\gamma}) + \frac{1}{2} \} \\
+&= inf\{x \in R: U - \frac{1}{2} \le \frac{1}{\pi} arctan(\frac{x-x_0}{\gamma}) \} \\
+&= inf\{x \in R: \pi(U - \frac{1}{2}) \le arctan(\frac{x-x_0}{\gamma}) \} \\
+&= inf\{x \in R: tan(\pi(U - \frac{1}{2})) \le tax(arctan(\frac{x-x_0}{\gamma})) \} \\
+&= inf\{x \in R: tan(\pi(U - \frac{1}{2})) \le \frac{x-x_0}{\gamma} \} \\
+&= inf\{x \in R: \gamma tan(\pi(U - \frac{1}{2})) \le x-x_0 \} \\
+&= inf\{x \in R: \gamma tan(\pi(U - \frac{1}{2})) + x_0 \le x \} \\
+&=\gamma tan(\pi(U - \frac{1}{2})) + x_0
+\end{aligned}
+$$
+```{r fig.height=3, fig.width=7}
+cauchy <- function(x_0=0, gamma=1.0, size=1000)
+{
+  # Create sample size
+  sample <- runif(size)
+  
+  # Create sample using the inverse
+  inverse <- gamma * tan(pi*(sample - 1/2)) + x_0
+  
+  # True Exponential distribution
+  true_inverse <- rexp(size, gamma)
+  
+  # Density Plot
+  hist(inverse, prob=TRUE, main="Inverse - Density", breaks=1000, xlim=c(-40, 20), col=c("blue","red","white","green"))
+  
+  # Frequency
+  hist(inverse, freq=TRUE, main="Inverse - Frequency", breaks=1000, xlim=c(-40, 20), col=c("blue","red","white","green"))
+}
+
+cauchy(0, 6.9, 1000)
+```
+
+# Estimation of a agricultural area
+a)
+$$
+\{N(\mu, \sigma^2), (\mu, \sigma^2) \in R^2 \}
+$$
+From the fact that $\sigma^2$ needs to be greater than zero, we can conclude that the model is identifiable. It implies that it is injective.
+
+b)
+Quantity to be estimated (area of the field):
+$$
+X_n = distance + \epsilon
+$$
+The mean is our distance, thus we have a distribution $N(distance, \sigma^2)$.
+$$
+Area = Distance^2
+$$
+
+Thus, our area is
+$$
+h(x) = x^2
+$$
+Our mean distance is,
+$$
+E[Distance] = \frac{1}{n}\sum_{i=1}^n x_i =\frac{x_1 + x_2}{2}
+$$
+Thus, our area estimator is of two observations is:
+$$
+h(E[Distance]) = (\frac{x_1 + x_2}{2})^2
+$$
+c)
+Generalized estimator:
+$$
+(\frac{1}{n}\sum_{i=1}^n x_i)^2 = \frac{1}{n} (\sum_{i=1}^n x_i)^2
+$$
+Since our sample is finite, and the fact that the distance $E[Distance]=distance$ and area $h(x)=x^2$ we know that $T(\hat{F}_n) \rightarrow T(F_n)$ asymptotically. Thus, our estimator is strongly consistent.\
+Since both the distance and area is differentiable and we have an strongly consistent estimator we can use the Delta Method to tell that our estimator is asymptotically normal.\
+We have the Delta Method theorem:
+$$
+\sqrt(n) \{g(\bar{X_n}) - g(\mu)\} \rightarrow N \{0, \sigma^2 g'(\mu)^2\}
+$$
+Thus, its asymptotic variance is $Var(X) = \sigma^2*h'(distance)^2$.\
+
+# Descriptive statistics
+a)
+```{r}
+df <- read.csv("cider.csv")
+head(df)
+```
+b)
+```{r fig.height=3, fig.width=7}
+barplot(table(df$Type), main = "Cider Flavors", ylab = "Frequency")
+```
+```{r fig.height=3, fig.width=7}
+boxplot(df$Sweetness~df$Type, main = "Sweetness between cider types", xlab = "Types", ylab = "Rating")
+```
+
+d)
+```{r fig.height=3, fig.width=7}
+library(ggplot2)
+sweet <- ggplot(df, aes(x = Sweetness, y = Bitterness, color = Type)) + geom_point() + geom_smooth()
+sweet
+```
+
+e)
+We can see that the correlation between bitterness and sweetness is negativly correlated. The sweeter, the less bitter.
