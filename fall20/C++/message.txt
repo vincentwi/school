@@ -1,0 +1,92 @@
+#include <iostream>
+using namespace std;
+
+class IntQueue {
+   private:
+    int size, count, count_state, front, back, nfill;
+    int *queue;
+
+   public:
+    //1-param constructor for the queue
+    IntQueue(int n) : size(n), front(0), back(0), nfill(0) {
+        queue = new int[size];
+    }
+
+    //Copy constructor
+    IntQueue(const IntQueue &q) : size(q.size), back(q.back), nfill(q.nfill), front(q.front) {
+        queue = new int[other.size];
+        for (int i = 0; i < q.size; i++)
+            queue[i] = q.queue[i];
+    }
+
+    void fill(int *q, int n) {
+        // fill with 0
+        if (n < size) {
+            for (int i = 0; i < size; i++)
+                queue[i] = 0;
+        }
+
+        front = 0;
+        back = 0;
+        nfill = 0;
+
+        for (int i = 0; i < n; i++) {
+            queue[i] = q[i];
+        }
+    }
+
+    //Resets the queue back to 0
+    void reset() {
+        nfill = 0;
+        front = 0;
+        back = 0;
+        for (int i = 0; i < size; i++) {
+            queue[i] = 0;
+        }
+    }
+
+    void IntQueue::empty() {
+        nfill = 0;
+        front = 0;
+        back = 0;
+    }
+
+    friend ostream &operator<<(ostream &out, const IntQueue &intq) {
+        out << "IntQueue=[{";
+        for (int i = 0; i < intq.size; i++) {
+            out << intq.queue[i];
+            if (i < intq.size - 1) {
+                out << ",";
+            }
+        }
+        out << "}, ";
+        out << "front: " << intq.front << ", ";
+        out << "back: " << intq.back << ", ";
+        out << "nfill: " << intq.nfill << ", ";
+        out << "size: " << intq.size;
+        return out << "]";
+    }
+
+    void remove() {
+        front++;
+        nfill--;
+        if (back >= size) {
+            back = 0;
+        }
+    }
+
+    void add(int val) {
+        queue[back] = val;
+        back++;
+        nfill++;
+    }
+};
+
+int main(int argc, char const *argv[]) {
+    IntQueue iq1(5);
+    int v1[] = {1, 2, 3, 4};
+    iq1.fill(v1, 4);
+    cout << iq1 << endl;
+    iq1.reset();
+    cout << iq1 << endl;
+}
