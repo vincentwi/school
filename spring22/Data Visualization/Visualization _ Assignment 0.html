@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)https://tobias.isenberg.cc/visualization/Assignments/Assignment0 -->
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html, body, input, textarea, select, button {
+    background-color: #181a1b;
+}
+html, body, input, textarea, select, button {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #555b00 !important;
+    color: #e8e6e3 !important;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
+  <title>Visualization : Assignment 0 </title>
+  
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta name="MSSmartTagsPreventParsing" content="true">
+  <link rel="icon" href="https://tobias.isenberg.cc/pub/skins/lean/leanicon.gif" type="image/gif">
+  <link rel="SHORTCUT ICON" href="https://tobias.isenberg.cc/pub/skins/lean/leanicon.gif">
+  <!--HeaderText--><style type="text/css"><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: pre; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  td.markup1 pre { white-space: pre-wrap; }
+  .noPmTOC, .PmTOCdiv:empty {display:none;}
+.PmTOCdiv { display: inline-block; font-size: 13px; overflow: auto; max-height: 500px;}
+.PmTOCdiv a { text-decoration: none;}
+.back-arrow {font-size: .9em; text-decoration: none;}
+#PmTOCchk + label {cursor: pointer;}
+#PmTOCchk {display: none;}
+#PmTOCchk:not(:checked) + label > .pmtoc-show {display: none;}
+#PmTOCchk:checked + label > .pmtoc-hide {display: none;}
+#PmTOCchk:checked + label + div {display: none;}table.sortable th { cursor: pointer; }
+table.sortable th::after { color: transparent; content: "\00A0\025B8"; }
+table.sortable th:hover::after { color: inherit; content: "\00A0\025B8"; }
+table.sortable th.dir-u::after { color: inherit; content: "\00A0\025BE"; }
+table.sortable th.dir-d::after { color: inherit; content: "\00A0\025B4"; } 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none;}
+
+--></style><style class="darkreader darkreader--sync" media="screen"></style>  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="./Visualization _ Assignment 0_files/lean.css" type="text/css"><style class="darkreader darkreader--sync" media="screen"></style>
+  
+ <meta name="darkreader" content="dc4a8583e11e4b72899b9ff7dab40c75"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+a[href="https://coinmarketcap.com/"] > svg[width="94"][height="16"] > path {
+    fill: var(--darkreader-neutral-text) !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1 {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0f3a48 !important;
+}</style><style data-emotion="css"></style><style class="darkreader darkreader--sync" media="screen"></style><style>
+            .flipX video::-webkit-media-text-track-display {
+                transform: matrix(-1, 0, 0, 1, 0, 0) !important;
+            }
+            .flipXY video::-webkit-media-text-track-display {
+                transform: matrix(-1, 0, 0, -1, 0, 0) !important;
+            }
+            .flipXYX video::-webkit-media-text-track-display {
+                transform: matrix(1, 0, 0, -1, 0, 0) !important;
+            }</style><style class="darkreader darkreader--sync" media="screen"></style><style>
+            @keyframes blinkWarning {
+                0% { color: red; }
+                100% { color: white; }
+            }
+            @-webkit-keyframes blinkWarning {
+                0% { color: red; }
+                100% { color: white; }
+            }
+            .blinkWarning {
+                -webkit-animation: blinkWarning 1s linear infinite;
+                -moz-animation: blinkWarning 1s linear infinite;
+                animation: blinkWarning 1s linear infinite;
+            }</style><style class="darkreader darkreader--sync" media="screen"></style></head>
+
+ <body>
+  <!--PageHeaderFmt-->
+  <table summary="Site: Header" id="siteheadtable" width="770" cellpadding="0" cellspacing="0" border="0" align="center">
+   <tbody><tr>
+    <td id="headlogo" colspan="1" rowspan="2" title="Visualization Home">
+     <div id="sitelogo"><a href="https://tobias.isenberg.cc/visualization"><img src="./Visualization _ Assignment 0_files/vis-icon.png" alt="Visualization" border="0"></a><div id="sitelogo"></div>
+    </div></td>
+   </tr>
+   <tr>
+    <td id="headsiteloc">
+     <div id="sitelocgroup">
+      <span id="sitegroupforheader">
+       <a href="https://tobias.isenberg.cc/visualization/Assignments" title="Assignments Home">Assignments</a></span> /
+     </div>
+     <div id="siteloctitle" title="Assignment 0 was last modified on January 13, 2022, at 05:59 AM">
+      <h1>Assignment 0</h1>
+     </div>
+    </td>
+    <td id="siteheadcmds">
+     <div id="headcmdsupper">
+      <span id="headedit"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment0?action=edit" title="Edit this page">Edit Page</a></span>
+      <span id="headdiff">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment0?action=diff" title="History of this page">Page History</a></span>
+      <span id="headhelp">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/PmWiki/DocumentationIndex" title="Wiki Documentation">Wiki Help</a></span>
+     </div>
+     <div id="headcmdslower">
+      <span id="headprint"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment0?action=print" title="Printable view of this page">Print</a> |</span>
+      <span class="headsearch"><a href="https://tobias.isenberg.cc/visualization/Site.Search" title="Search the site" rel="nofollow">Search</a>: </span><form class="headsearch search" action="https://tobias.isenberg.cc/visualization"><input class="searchbox" type="text" name="q" value="" size="40"><input class="searchbutton" type="submit" value="Go">
+       <!-- version > beta53 -->
+       <!-- <input type='hidden' name='n' value='Assignments.Assignment0' /><input type='hidden' name='action' value='search' /> -->
+       <!-- version < beta53 -->
+       <input type="hidden" name="n" value="Site.Search">
+      </form></div>
+    </td>
+   </tr>
+  </tbody></table>
+  <!--/PageHeaderFmt-->
+  
+  <table summary="Site: Main" id="contentmain" width="770" cellpadding="0" cellspacing="0" border="0" align="center">
+   <tbody>
+    <tr>
+     <!--PageLeftFmt-->
+     <td id="mainsidebar">
+      <ul><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Main/HomePage" title="">HomePage</a>
+</li></ul><p class="vspace sidehead"> Class Organization
+</p><ul><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Overview" title="">Class Overview</a>  
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Slides" title="">Slides</a>  
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/RecommendedReadings" title="">Recommended Readings</a>
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Grading" title="">Grading and Rules</a>  
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Links" title="">Links and References</a>  
+</li></ul><p class="vspace sidehead"> Labs/Assignments
+</p><ul><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Schedule" title="">Tutorials Schedule</a>
+<ul><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial1" title="">Tutorial 1</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial2" title="">Tutorial 2</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial3" title="">Tutorial 3</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial3" title="">Tutorial 4</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial4" title="">Tutorial 5</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial5" title="">Tutorial 6</a>
+</li></ul></li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Overview" title="">Assignments Overview</a>
+<ul><li> <a class="selflink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment0" title="">Assignment 0</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment1" title="">Assignment 1</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment2" title="">Assignment 2</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment3" title="">Assignment 3</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment4" title="">Assignment 4</a>
+</li></ul></li></ul><p class="vspace"><span style="display: none;"> right <span style="font-size:83%"><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Site/SideBar?action=edit" title="">edit SideBar</a></span></span>
+</p>
+
+      
+      <div id="sidebarbottom">
+       <span style="white-space:nowrap;"><a rel="nofollow" href="http://validator.w3.org/check/referer" title="Validate XHTML">XHTML</a></span>
+      </div>
+     </td>
+     <!--/PageLeftFmt-->
+     <td id="mainsitetext">
+      <!-- table to work around an NS4 bug -->
+      <table summary="Content Body" id="sitebody" cellpadding="0" cellspacing="0" border="0"> 
+       <tbody><tr>
+        <td>
+         <!--PageTitleFmt-->
+         <div id="sitepagetitle" title="Assignment 0 was last modified on January 13, 2022, at 05:59 AM">
+          <span style="display:none;">Assignment 0</span>
+         </div>
+         <!--PageText-->
+<div id="wikitext">
+<h2>Assignment 0: Group Forming</h2>
+<p>Each of you need to form a group of four. Please fill in the information of your team members in <a class="urllink" href="https://forms.gle/pfiNM68maDDUukQm6" title="" rel="nofollow">this Google Form</a> before <strong>January 16, 2022, 23:59</strong>.
+</p><ul><li>Team name
+</li><li>Team member: Name / E-mail
+</li></ul>
+</div>
+
+        </td>
+       </tr>
+      </tbody></table>
+     </td>
+    </tr>
+    <tr>
+     <td id="mainsitefoot" colspan="2" rowspan="1">
+      <table summary="Wiki: Footer" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <!--PageFooterFmt-->
+       <tbody><tr>
+        <td id="footleft">
+         <span id="footchanges"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/RecentChanges" title="Recent (C)hanges in this section" accesskey="c">Recent Changes</a>
+         <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Site.AllRecentChanges" title="(A)ll Recent changes for the entire site" accesskey="a">(All)</a></span>
+         <span id="footeditsb">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Site.SideBar?action=edit" title="Edit the Side(B)ar" accesskey="b">Edit SideBar</a></span>
+        </td>
+        <td id="footmiddle">
+         <span id="footlastmod">Page last modified on January 13, 2022, at 05:59 AM</span> 
+        </td>
+        <td id="footright">
+         <span id="footedit"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment0?action=edit" title="(E)dit this page" accesskey="e">Edit Page</a></span>
+         <span id="foothist">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment0?action=diff" title="(H)istory of this page" accesskey="h">Page History</a></span> 
+        </td>
+       </tr>
+       <!--/PageFooterFmt-->
+       <tr>
+        <td id="sitesole" colspan="3" rowspan="1">
+          
+         <span id="sitepoweredby" title="Powered by PmWiki">Powered by
+          <a href="http://www.pmichaud.com/wiki/PmWiki/PmWiki" title="PmWiki Home">PmWiki</a></span> 
+        </td>
+       </tr>
+      </tbody></table>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <!-- Lean Skin v0.14.3
+  vim: expandtab sw=1 ts=1 sts=1 :
+  -->
+ 
+
+
+<div id="88fca8aa-ba61-4e99-a851-00427316312e-quickmenu"></div></body></html>

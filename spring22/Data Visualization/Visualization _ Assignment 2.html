@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)https://tobias.isenberg.cc/visualization/Assignments/Assignment2 -->
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html, body, input, textarea, select, button {
+    background-color: #181a1b;
+}
+html, body, input, textarea, select, button {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #555b00 !important;
+    color: #e8e6e3 !important;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
+  <title>Visualization : Assignment 2 </title>
+  
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta name="MSSmartTagsPreventParsing" content="true">
+  <link rel="icon" href="https://tobias.isenberg.cc/pub/skins/lean/leanicon.gif" type="image/gif">
+  <link rel="SHORTCUT ICON" href="https://tobias.isenberg.cc/pub/skins/lean/leanicon.gif">
+  <!--HeaderText--><style type="text/css"><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: pre; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  td.markup1 pre { white-space: pre-wrap; }
+  .noPmTOC, .PmTOCdiv:empty {display:none;}
+.PmTOCdiv { display: inline-block; font-size: 13px; overflow: auto; max-height: 500px;}
+.PmTOCdiv a { text-decoration: none;}
+.back-arrow {font-size: .9em; text-decoration: none;}
+#PmTOCchk + label {cursor: pointer;}
+#PmTOCchk {display: none;}
+#PmTOCchk:not(:checked) + label > .pmtoc-show {display: none;}
+#PmTOCchk:checked + label > .pmtoc-hide {display: none;}
+#PmTOCchk:checked + label + div {display: none;}table.sortable th { cursor: pointer; }
+table.sortable th::after { color: transparent; content: "\00A0\025B8"; }
+table.sortable th:hover::after { color: inherit; content: "\00A0\025B8"; }
+table.sortable th.dir-u::after { color: inherit; content: "\00A0\025BE"; }
+table.sortable th.dir-d::after { color: inherit; content: "\00A0\025B4"; } 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none;}
+
+--></style><style class="darkreader darkreader--sync" media="screen"></style>  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="./Visualization _ Assignment 2_files/lean.css" type="text/css"><style class="darkreader darkreader--sync" media="screen"></style>
+  
+ <style data-emotion="css"></style><style class="darkreader darkreader--sync" media="screen"></style><style>
+            .flipX video::-webkit-media-text-track-display {
+                transform: matrix(-1, 0, 0, 1, 0, 0) !important;
+            }
+            .flipXY video::-webkit-media-text-track-display {
+                transform: matrix(-1, 0, 0, -1, 0, 0) !important;
+            }
+            .flipXYX video::-webkit-media-text-track-display {
+                transform: matrix(1, 0, 0, -1, 0, 0) !important;
+            }</style><style class="darkreader darkreader--sync" media="screen"></style><style>
+            @keyframes blinkWarning {
+                0% { color: red; }
+                100% { color: white; }
+            }
+            @-webkit-keyframes blinkWarning {
+                0% { color: red; }
+                100% { color: white; }
+            }
+            .blinkWarning {
+                -webkit-animation: blinkWarning 1s linear infinite;
+                -moz-animation: blinkWarning 1s linear infinite;
+                animation: blinkWarning 1s linear infinite;
+            }</style><style class="darkreader darkreader--sync" media="screen"></style><meta name="darkreader" content="5da3fe83b3ea4e1886193ffe5f89616a"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+a[href="https://coinmarketcap.com/"] > svg[width="94"][height="16"] > path {
+    fill: var(--darkreader-neutral-text) !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1 {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0f3a48 !important;
+}</style></head>
+
+ <body>
+  <!--PageHeaderFmt-->
+  <table summary="Site: Header" id="siteheadtable" width="770" cellpadding="0" cellspacing="0" border="0" align="center">
+   <tbody><tr>
+    <td id="headlogo" colspan="1" rowspan="2" title="Visualization Home">
+     <div id="sitelogo"><a href="https://tobias.isenberg.cc/visualization"><img src="./Visualization _ Assignment 2_files/vis-icon.png" alt="Visualization" border="0"></a><div id="sitelogo"></div>
+    </div></td>
+   </tr>
+   <tr>
+    <td id="headsiteloc">
+     <div id="sitelocgroup">
+      <span id="sitegroupforheader">
+       <a href="https://tobias.isenberg.cc/visualization/Assignments" title="Assignments Home">Assignments</a></span> /
+     </div>
+     <div id="siteloctitle" title="Assignment 2 was last modified on January 24, 2022, at 02:03 PM">
+      <h1>Assignment 2</h1>
+     </div>
+    </td>
+    <td id="siteheadcmds">
+     <div id="headcmdsupper">
+      <span id="headedit"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment2?action=edit" title="Edit this page">Edit Page</a></span>
+      <span id="headdiff">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment2?action=diff" title="History of this page">Page History</a></span>
+      <span id="headhelp">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/PmWiki/DocumentationIndex" title="Wiki Documentation">Wiki Help</a></span>
+     </div>
+     <div id="headcmdslower">
+      <span id="headprint"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment2?action=print" title="Printable view of this page">Print</a> |</span>
+      <span class="headsearch"><a href="https://tobias.isenberg.cc/visualization/Site.Search" title="Search the site" rel="nofollow">Search</a>: </span><form class="headsearch search" action="https://tobias.isenberg.cc/visualization"><input class="searchbox" type="text" name="q" value="" size="40"><input class="searchbutton" type="submit" value="Go">
+       <!-- version > beta53 -->
+       <!-- <input type='hidden' name='n' value='Assignments.Assignment2' /><input type='hidden' name='action' value='search' /> -->
+       <!-- version < beta53 -->
+       <input type="hidden" name="n" value="Site.Search">
+      </form></div>
+    </td>
+   </tr>
+  </tbody></table>
+  <!--/PageHeaderFmt-->
+  
+  <table summary="Site: Main" id="contentmain" width="770" cellpadding="0" cellspacing="0" border="0" align="center">
+   <tbody>
+    <tr>
+     <!--PageLeftFmt-->
+     <td id="mainsidebar">
+      <ul><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Main/HomePage" title="">HomePage</a>
+</li></ul><p class="vspace sidehead"> Class Organization
+</p><ul><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Overview" title="">Class Overview</a>  
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Slides" title="">Slides</a>  
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/RecommendedReadings" title="">Recommended Readings</a>
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Grading" title="">Grading and Rules</a>  
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Links" title="">Links and References</a>  
+</li></ul><p class="vspace sidehead"> Labs/Assignments
+</p><ul><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Schedule" title="">Tutorials Schedule</a>
+<ul><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial1" title="">Tutorial 1</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial2" title="">Tutorial 2</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial3" title="">Tutorial 3</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial3" title="">Tutorial 4</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial4" title="">Tutorial 5</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial5" title="">Tutorial 6</a>
+</li></ul></li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Overview" title="">Assignments Overview</a>
+<ul><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment0" title="">Assignment 0</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment1" title="">Assignment 1</a>
+</li><li> <a class="selflink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment2" title="">Assignment 2</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment3" title="">Assignment 3</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment4" title="">Assignment 4</a>
+</li></ul></li></ul><p class="vspace"><span style="display: none;"> right <span style="font-size:83%"><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Site/SideBar?action=edit" title="">edit SideBar</a></span></span>
+</p>
+
+      
+      <div id="sidebarbottom">
+       <span style="white-space:nowrap;"><a rel="nofollow" href="http://validator.w3.org/check/referer" title="Validate XHTML">XHTML</a></span>
+      </div>
+     </td>
+     <!--/PageLeftFmt-->
+     <td id="mainsitetext">
+      <!-- table to work around an NS4 bug -->
+      <table summary="Content Body" id="sitebody" cellpadding="0" cellspacing="0" border="0"> 
+       <tbody><tr>
+        <td>
+         <!--PageTitleFmt-->
+         <div id="sitepagetitle" title="Assignment 2 was last modified on January 24, 2022, at 02:03 PM">
+          <span style="display:none;">Assignment 2</span>
+         </div>
+         <!--PageText-->
+<div id="wikitext">
+<h2>Assignment 2: Exploratory Data Analysis</h2>
+<p>In this assignment, you will identify a dataset of interest and perform an exploratory analysis to better understand the shape &amp; structure of the data, investigate initial questions, and develop preliminary insights &amp; hypotheses. 
+</p>
+<p class="vspace">Your final submission will take the form of a report consisting of captioned visualizations that convey key insights gained during your analysis. The report should consist of four parts.
+</p>
+<div class="vspace"></div><h3>Part 1: Data Selection</h3>
+<p>The team chose one dataset from the previous assignment that your group found most interesting to investigate. You can copy and paste the dataset description from your previous assignment. Explain some reasons why your team choose the dataset (5-10 sentences).
+</p>
+<div class="vspace"></div><h3>Part 2: Data Preparation</h3>
+<p>Describe how you transform and clean the data for exploratory data analysis. The explanation should demonstrate that you did some effort to assess data quality and perform some data transformation (0.5 - 1 page).
+</p>
+<div class="vspace"></div><ul><li>How do you transform the data from the original source to the suitable format for visualization?
+</li><li>How do you clean the dataset? Is there any outlier data point? How do you detect that?
+</li><li>How do you perform sanity checks on the data? Is there any missing data, typos, or incorrect mapping?
+</li><li>Is there additional data that could be useful for your research questions?
+</li></ul><div class="vspace"></div><h3>Part 3: Research Questions</h3>
+<p>After selecting a topic and dataset — but prior to analysis — you should write down an initial set of <strong>at least three different questions</strong> you would like to investigate.
+</p>
+<div class="vspace"></div><h3>Part 4: Exploratory Data Analysis</h3>
+<p>Next, you will perform an exploratory analysis of your dataset using a visualization tool of your choice. You should consider two different phases of exploration.
+</p>
+<p class="vspace">In the first phase, you should seek to gain an overview of the shape &amp; structure of your dataset. What variables does the dataset contain? How are they distributed? Are there any notable data quality issues? Are there any surprising relationships among the variables? Be sure to also perform “sanity checks” for patterns you expect to see!
+</p>
+<p class="vspace">In the second phase, you should investigate your initial questions, as well as any new questions that arise during your exploration. For each question, start by creating a visualization that might provide a useful answer. Then refine the visualization (e.g., by adding additional variables, changing sorting or axis scales, transforming your data by filtering or subsetting it, etc.) to develop better perspectives, explore unexpected observations, or sanity check your assumptions. You should repeat this process for each of your questions, but feel free to revise your questions or branch off to explore new questions.
+</p>
+<p class="vspace"><strong>How to export figures from Tableau</strong>: <a class="urllink" href="https://help.tableau.com/current/reader/desktop/en-us/reader_export.htm#:~:text=Select%20Worksheet%20%3E%20Export%20%3E%20Image.,name%20into%20the%20text%20box." title="" rel="nofollow">this link</a>
+</p>
+<div class="vspace"></div><h3>Submission</h3>
+<p><strong>WHAT - Your final submission should take the form of a PDF report that consists of 10 or more captioned visualizations detailing your most important insights.</strong> Your “insights” can include important surprises or issues (such as data quality problems affecting your analysis) as well as responses to your analysis questions. See an example of the report on <a class="urllink" href="https://docs.google.com/document/d/1EtHsnsxn-Zf2gcMOlM2zxxOKaRETKpaS5eSVVZoyJVk/edit#heading=h.6kbt07cxnyxd" title="" rel="nofollow">analyzing data about motion pictures</a>.
+</p>
+<p class="vspace">Each visualization image should be a screenshot exported from a visualization tool, accompanied by a title and descriptive caption (2-4 sentences long) describing the insight(s) learned from that view. Provide sufficient detail for each caption such that anyone could read through your report and understand what you’ve learned. You are free, but not required, to annotate your images to draw attention to specific features of the data. You may perform highlighting within the visualization tool itself, or draw annotations on the exported image.
+</p>
+<p class="vspace">The end of your report should include a brief summary of main lessons learned.
+</p>
+<p class="vspace"><strong>WHERE - The report should be named "A2_[Your team name].pdf".</strong> Submit the file in <a class="urllink" href="https://www.dropbox.com/request/KOcEzkaoM3MFVkCrdR5A" title="" rel="nofollow">this Dropbox folder</a>.
+</p>
+<p class="vspace"><strong>WHEN - Assignment 2 is due before February 4, 2022, 23:59.</strong>
+</p>
+<div class="vspace"></div><h3>Grading</h3>
+<p>We will use the following rubric to grade your assignment. Note, rubric cells may not map exactly to specific point scores.
+</p>
+<div class="vspace"></div>
+<table border="1" cellpadding="5" cellspacing="0"><tbody><tr><th class="Keywords" align="center">
+<p>Component
+</p></th><th align="center">
+<p>Excellent
+</p></th><th align="center">
+<p>Satisfactory
+</p></th><th align="center">
+<p>Poor
+</p></th></tr><tr><td align="center">
+<p>Breadth of Exploration
+</p></td><td align="center">
+<p>More than 3 questions were initially asked, and target substantially different portions/aspects of the data.
+</p></td><td align="center">
+<p>At least 3 questions were initially asked of the data, but there is some overlap between questions.
+</p></td><td align="center">
+<p>Fewer than 3 initial questions were posed of the data.
+</p></td></tr><tr><td align="center">
+<p>Depth of Exploration
+</p></td><td align="center">
+<p>A sufficient number of follow-up questions were asked to yield insights that helped to more deeply explore the initial questions.
+</p></td><td align="center">
+<p>Some follow-up questions were asked, but they did not take the analysis much deeper than the initial questions.
+</p></td><td align="center">
+<p>No follow-up questions were asked after answering the initial questions.
+</p></td></tr><tr><td align="center">
+<p>Data Quality
+</p></td><td align="center">
+<p>Data quality was thoroughly assessed with extensive profiling of fields and records.
+</p></td><td align="center">
+<p>Simple checks were conducted on only a handful of fields or records.
+</p></td><td align="center">
+<p>Little or no evidence that data quality was assessed.
+</p></td></tr><tr><td align="center">
+<p>Visualizations
+</p></td><td align="center">
+<p>More than 10 visualizations were produced, and a variety of marks and encodings were explored. All design decisions were both expressive and effective.
+</p></td><td align="center">
+<p>At least 10 visualizations were produced. The visual encodings chosen were largely effective and expressive, but some errors remain.
+</p></td><td align="center">
+<p>Several ineffective or inexpressive design choices are made. Fewer than 10 visualizations have been produced.
+</p></td></tr><tr><td align="center">
+<p>Data Transformation
+</p></td><td align="center">
+<p>More advanced transformation were used to extend the dataset in interesting or useful ways.
+</p></td><td align="center">
+<p>Simple transforms (e.g., sorting, filtering) were primarily used.
+</p></td><td align="center">
+<p>The raw dataset was used directly, with little to no additional transformation.
+</p></td></tr><tr><td align="center">
+<p>Captions
+</p></td><td align="center">
+<p>Captions richly describe the visualizations and contextualize the insight within the analysis.
+</p></td><td align="center">
+<p>Captions do a good job describing the visualizations, but could better connect prior or subsequent steps of the analysis.
+</p></td><td align="center">
+<p>Captions are missing, overly brief, or shallow in their analysis of visualizations.
+</p></td></tr><tr><td align="center">
+<p>Creativity &amp; Originality
+</p></td><td align="center">
+<p>You exceeded the parameters of the assignment, with original insights or a particularly engaging design.
+</p></td><td align="center">
+<p>You met all the parameters of the assignment.
+</p></td><td align="center">
+<p>You met most of the parameters of the assignment.
+</p></td></tr></tbody></table>
+<div class="vspace"></div><h3>Points for this assignment</h3>
+<p>30 points
+</p>
+<p class="vspace"><strong>Acknowledgements:</strong> This assignment is closely similar to the assignment from the Interactive Data Visualization course taught by Arvind Satyanarayan at MIT.
+</p>
+</div>
+
+        </td>
+       </tr>
+      </tbody></table>
+     </td>
+    </tr>
+    <tr>
+     <td id="mainsitefoot" colspan="2" rowspan="1">
+      <table summary="Wiki: Footer" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <!--PageFooterFmt-->
+       <tbody><tr>
+        <td id="footleft">
+         <span id="footchanges"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/RecentChanges" title="Recent (C)hanges in this section" accesskey="c">Recent Changes</a>
+         <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Site.AllRecentChanges" title="(A)ll Recent changes for the entire site" accesskey="a">(All)</a></span>
+         <span id="footeditsb">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Site.SideBar?action=edit" title="Edit the Side(B)ar" accesskey="b">Edit SideBar</a></span>
+        </td>
+        <td id="footmiddle">
+         <span id="footlastmod">Page last modified on January 24, 2022, at 02:03 PM</span> 
+        </td>
+        <td id="footright">
+         <span id="footedit"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment2?action=edit" title="(E)dit this page" accesskey="e">Edit Page</a></span>
+         <span id="foothist">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment2?action=diff" title="(H)istory of this page" accesskey="h">Page History</a></span> 
+        </td>
+       </tr>
+       <!--/PageFooterFmt-->
+       <tr>
+        <td id="sitesole" colspan="3" rowspan="1">
+          
+         <span id="sitepoweredby" title="Powered by PmWiki">Powered by
+          <a href="http://www.pmichaud.com/wiki/PmWiki/PmWiki" title="PmWiki Home">PmWiki</a></span> 
+        </td>
+       </tr>
+      </tbody></table>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <!-- Lean Skin v0.14.3
+  vim: expandtab sw=1 ts=1 sts=1 :
+  -->
+ 
+
+
+<div id="f0543a9b-6c42-455d-82bd-931876fa0caa-quickmenu"></div></body></html>

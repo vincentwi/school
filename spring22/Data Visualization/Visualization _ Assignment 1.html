@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)https://tobias.isenberg.cc/visualization/Assignments/Assignment1 -->
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html, body, input, textarea, select, button {
+    background-color: #181a1b;
+}
+html, body, input, textarea, select, button {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #555b00 !important;
+    color: #e8e6e3 !important;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
+  <title>Visualization : Assignment 1 </title>
+  
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta name="MSSmartTagsPreventParsing" content="true">
+  <link rel="icon" href="https://tobias.isenberg.cc/pub/skins/lean/leanicon.gif" type="image/gif">
+  <link rel="SHORTCUT ICON" href="https://tobias.isenberg.cc/pub/skins/lean/leanicon.gif">
+  <!--HeaderText--><style type="text/css"><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: pre; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  td.markup1 pre { white-space: pre-wrap; }
+  .noPmTOC, .PmTOCdiv:empty {display:none;}
+.PmTOCdiv { display: inline-block; font-size: 13px; overflow: auto; max-height: 500px;}
+.PmTOCdiv a { text-decoration: none;}
+.back-arrow {font-size: .9em; text-decoration: none;}
+#PmTOCchk + label {cursor: pointer;}
+#PmTOCchk {display: none;}
+#PmTOCchk:not(:checked) + label > .pmtoc-show {display: none;}
+#PmTOCchk:checked + label > .pmtoc-hide {display: none;}
+#PmTOCchk:checked + label + div {display: none;}table.sortable th { cursor: pointer; }
+table.sortable th::after { color: transparent; content: "\00A0\025B8"; }
+table.sortable th:hover::after { color: inherit; content: "\00A0\025B8"; }
+table.sortable th.dir-u::after { color: inherit; content: "\00A0\025BE"; }
+table.sortable th.dir-d::after { color: inherit; content: "\00A0\025B4"; } 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none;}
+
+--></style><style class="darkreader darkreader--sync" media="screen"></style>  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="./Visualization _ Assignment 1_files/lean.css" type="text/css"><style class="darkreader darkreader--sync" media="screen"></style>
+  
+ <style data-emotion="css"></style><style class="darkreader darkreader--sync" media="screen"></style><style>
+            .flipX video::-webkit-media-text-track-display {
+                transform: matrix(-1, 0, 0, 1, 0, 0) !important;
+            }
+            .flipXY video::-webkit-media-text-track-display {
+                transform: matrix(-1, 0, 0, -1, 0, 0) !important;
+            }
+            .flipXYX video::-webkit-media-text-track-display {
+                transform: matrix(1, 0, 0, -1, 0, 0) !important;
+            }</style><style class="darkreader darkreader--sync" media="screen"></style><style>
+            @keyframes blinkWarning {
+                0% { color: red; }
+                100% { color: white; }
+            }
+            @-webkit-keyframes blinkWarning {
+                0% { color: red; }
+                100% { color: white; }
+            }
+            .blinkWarning {
+                -webkit-animation: blinkWarning 1s linear infinite;
+                -moz-animation: blinkWarning 1s linear infinite;
+                animation: blinkWarning 1s linear infinite;
+            }</style><style class="darkreader darkreader--sync" media="screen"></style><meta name="darkreader" content="c6a904d357ce4e90868c3cb4f611175b"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+a[href="https://coinmarketcap.com/"] > svg[width="94"][height="16"] > path {
+    fill: var(--darkreader-neutral-text) !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1 {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0f3a48 !important;
+}</style></head>
+
+ <body>
+  <!--PageHeaderFmt-->
+  <table summary="Site: Header" id="siteheadtable" width="770" cellpadding="0" cellspacing="0" border="0" align="center">
+   <tbody><tr>
+    <td id="headlogo" colspan="1" rowspan="2" title="Visualization Home">
+     <div id="sitelogo"><a href="https://tobias.isenberg.cc/visualization"><img src="./Visualization _ Assignment 1_files/vis-icon.png" alt="Visualization" border="0"></a><div id="sitelogo"></div>
+    </div></td>
+   </tr>
+   <tr>
+    <td id="headsiteloc">
+     <div id="sitelocgroup">
+      <span id="sitegroupforheader">
+       <a href="https://tobias.isenberg.cc/visualization/Assignments" title="Assignments Home">Assignments</a></span> /
+     </div>
+     <div id="siteloctitle" title="Assignment 1 was last modified on January 19, 2022, at 03:25 AM">
+      <h1>Assignment 1</h1>
+     </div>
+    </td>
+    <td id="siteheadcmds">
+     <div id="headcmdsupper">
+      <span id="headedit"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment1?action=edit" title="Edit this page">Edit Page</a></span>
+      <span id="headdiff">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment1?action=diff" title="History of this page">Page History</a></span>
+      <span id="headhelp">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/PmWiki/DocumentationIndex" title="Wiki Documentation">Wiki Help</a></span>
+     </div>
+     <div id="headcmdslower">
+      <span id="headprint"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment1?action=print" title="Printable view of this page">Print</a> |</span>
+      <span class="headsearch"><a href="https://tobias.isenberg.cc/visualization/Site.Search" title="Search the site" rel="nofollow">Search</a>: </span><form class="headsearch search" action="https://tobias.isenberg.cc/visualization"><input class="searchbox" type="text" name="q" value="" size="40"><input class="searchbutton" type="submit" value="Go">
+       <!-- version > beta53 -->
+       <!-- <input type='hidden' name='n' value='Assignments.Assignment1' /><input type='hidden' name='action' value='search' /> -->
+       <!-- version < beta53 -->
+       <input type="hidden" name="n" value="Site.Search">
+      </form></div>
+    </td>
+   </tr>
+  </tbody></table>
+  <!--/PageHeaderFmt-->
+  
+  <table summary="Site: Main" id="contentmain" width="770" cellpadding="0" cellspacing="0" border="0" align="center">
+   <tbody>
+    <tr>
+     <!--PageLeftFmt-->
+     <td id="mainsidebar">
+      <ul><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Main/HomePage" title="">HomePage</a>
+</li></ul><p class="vspace sidehead"> Class Organization
+</p><ul><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Overview" title="">Class Overview</a>  
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Slides" title="">Slides</a>  
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/RecommendedReadings" title="">Recommended Readings</a>
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Grading" title="">Grading and Rules</a>  
+</li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Class/Links" title="">Links and References</a>  
+</li></ul><p class="vspace sidehead"> Labs/Assignments
+</p><ul><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Schedule" title="">Tutorials Schedule</a>
+<ul><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial1" title="">Tutorial 1</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial2" title="">Tutorial 2</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial3" title="">Tutorial 3</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial3" title="">Tutorial 4</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial4" title="">Tutorial 5</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Tutorials/Tutorial5" title="">Tutorial 6</a>
+</li></ul></li><li><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Overview" title="">Assignments Overview</a>
+<ul><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment0" title="">Assignment 0</a>
+</li><li> <a class="selflink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment1" title="">Assignment 1</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment2" title="">Assignment 2</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment3" title="">Assignment 3</a>
+</li><li> <a class="wikilink" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment4" title="">Assignment 4</a>
+</li></ul></li></ul><p class="vspace"><span style="display: none;"> right <span style="font-size:83%"><a class="wikilink" href="https://tobias.isenberg.cc/visualization/Site/SideBar?action=edit" title="">edit SideBar</a></span></span>
+</p>
+
+      
+      <div id="sidebarbottom">
+       <span style="white-space:nowrap;"><a rel="nofollow" href="http://validator.w3.org/check/referer" title="Validate XHTML">XHTML</a></span>
+      </div>
+     </td>
+     <!--/PageLeftFmt-->
+     <td id="mainsitetext">
+      <!-- table to work around an NS4 bug -->
+      <table summary="Content Body" id="sitebody" cellpadding="0" cellspacing="0" border="0"> 
+       <tbody><tr>
+        <td>
+         <!--PageTitleFmt-->
+         <div id="sitepagetitle" title="Assignment 1 was last modified on January 19, 2022, at 03:25 AM">
+          <span style="display:none;">Assignment 1</span>
+         </div>
+         <!--PageText-->
+<div id="wikitext">
+<h2>Assignment 1: Data Proposals</h2>
+<p>First, you will pick a topic area of interest to you and find a dataset that can provide insights into that topic. 
+</p>
+<p class="vspace"><strong>Each team member</strong> comes up with one dataset and writes a short description (around half of the page) on the dataset as follows:
+</p>
+<div class="vspace"></div><ul><li>Dataset name
+</li><li>Short description of the dataset (5-15 sentences)
+</li><li>Why is this dataset interesting? (3-5 sentences)
+</li><li>How to access or collect the dataset? (1-3 sentences)
+</li><li>What potential questions do you want to explore? (at least three questions)
+</li></ul><p class="vspace"><strong>The teams combine a list of datasets from every team member and submit the team report.</strong>
+</p>
+<div class="vspace"></div><h3>Recommended Data Sources</h3>
+<p>To get up and running quickly with this assignment, we recommend exploring one of the following provided datasets:
+</p>
+<div class="vspace"></div><ul><li><a class="urllink" href="https://github.com/ZeningQu/World-Bank-Data-by-Indicators" title="" rel="nofollow">World Bank Indicators, 1960–2017</a>. The World Bank has tracked global human developed by indicators such as climate change, economy, education, environment, gender equality, health, and science and technology since 1960. The linked repository contains indicators that have been formatted to facilitate use with Tableau and other data visualization tools. However, you’re also welcome to browse and use the original data <a class="urllink" href="https://data.worldbank.org/indicator" title="" rel="nofollow">by indicator</a> or <a class="urllink" href="https://data.worldbank.org/country" title="" rel="nofollow">by country</a>. Click on an indicator category or country to download the CSV file.
+</li><li><a class="createlinktext" rel="nofollow" title="" href="https://tobias.isenberg.cc/visualization/Assignments/ChicagoCrimes2001Present?action=edit">https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present-Dashboard/5cd6-ry5g</a><a rel="nofollow" class="createlink" href="https://tobias.isenberg.cc/visualization/Assignments/ChicagoCrimes2001Present?action=edit">?</a> (click Export to download a CSV file). This dataset reflects reported incidents of crime (with the exception of murders where data exists for each victim) that occurred in the City of Chicago from 2001 to present, minus the most recent seven days. Data is extracted from the Chicago Police Department’s CLEAR (Citizen Law Enforcement Analysis and Reporting) system.
+</li><li><a class="urllink" href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present-Dashboard/5cd6-ry5g" title="" rel="nofollow">Daily Weather in the U.S., 2017</a>. This dataset contains daily U.S. weather measurements in 2017, provided by the <a class="urllink" href="ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/" title="" rel="nofollow">NOAA Daily Global Historical Climatology Network</a>. This data has been transformed: some weather stations with only sparse measurements have been filtered out. See the accompanying [[<a class="urllink" href="http://vis.csail.mit.edu/classes/6.859/A2/weather.txt" title="" rel="nofollow">http://vis.csail.mit.edu/classes/6.859/A2/weather.txt</a>|weather.txt for descriptions of each column.
+</li><li><a class="urllink" href="https://opportunityinsights.org/data/" title="" rel="nofollow">Social mobility in the U.S.</a>. Raj Chetty’s group at Harvard studies the factors that contribute to (or hinder) upward mobility in the United States (i.e., will our children earn more than we will). Their work has been <a class="urllink" href="https://www.nytimes.com/search?query=raj%20chetty" title="" rel="nofollow">extensively featured</a> in The New York Times. This page lists data from all of their papers, broken down by geographic level or by topic. We recommend downloading data in the CSV/Excel format, and encourage you to consider joining multiple datasets from the same paper (under the same heading on the page) for a sufficiently rich exploratory process.
+</li><li>The <a class="urllink" href="https://www.yelp.com/dataset" title="" rel="nofollow">Yelp Open Dataset</a> provides information about businesses, user reviews, and more from Yelp’s database. The data is split into separate files (business, checkin, photos, review, tip, and user), and is available in either JSON or SQL format. You might use this to investigate the distributions of scores on Yelp, look at how many reviews users typically leave, or look for regional trends about restaurants. Note that this is a large, structured dataset and you don’t need to look at all of the data to answer interesting questions. In order to download the data you will need to enter your email and agree to <a class="urllink" href="https://s3-media2.fl.yelpcdn.com/assets/srv0/engineering_pages/e926cc12796d/assets/vendor/yelp-dataset-license.pdf" title="" rel="nofollow">Yelp’s Dataset License</a>.
+</li></ul><div class="vspace"></div><h2>Additional Data Sources</h2>
+<p>If you want to investigate datasets other than those recommended above, here are some possible sources to consider. You are also free to use data from a source different from those included here. If you have any questions on whether your dataset is appropriate, please ask the course staff ASAP!
+</p>
+<div class="vspace"></div><ul><li><a class="urllink" href="https://www.data.gouv.fr/fr/" title="" rel="nofollow">data.gouv.fr</a> - French open data
+</li><li><a class="urllink" href="https://ec.europa.eu/eurostat/web/main/data/database" title="" rel="nofollow">EuroStat</a> - European Union statistics
+</li><li><a class="urllink" href="https://data.boston.gov/" title="" rel="nofollow">data.boston.gov</a> - City of Boston Open Data
+</li><li><a class="urllink" href="https://www.data.gov/" title="" rel="nofollow">data.gov</a> - U.S. Government Open Datasets
+</li><li><a class="urllink" href="https://www.census.gov/data.html" title="" rel="nofollow">U.S. Census Bureau</a> - Census Datasets
+</li><li><a class="urllink" href="https://quickstats.nass.usda.gov/" title="" rel="nofollow">USDA - National Agricultural Statistics Service</a> - US Agricultural Statistics
+</li><li><a class="urllink" href="https://www.ipums.org/" title="" rel="nofollow">IPUMS.org</a> - Integrated Census &amp; Survey Data from around the World
+</li><li><a class="urllink" href="https://github.com/fivethirtyeight/data/" title="" rel="nofollow">fivethirtyeight.com</a> - Data and Code behind the Stories and Interactives
+</li><li><a class="urllink" href="https://github.com/BuzzFeedNews" title="" rel="nofollow">Buzzfeed News</a>
+</li><li><a class="urllink" href="https://opendata.socrata.com/" title="" rel="nofollow">Socrata Open Data</a>
+</li><li><a class="urllink" href="https://www.dataquest.io/blog/free-datasets-for-projects/" title="" rel="nofollow">17 places to find datasets for data science projects</a>
+</li><li><a class="urllink" href="https://www.kaggle.com/datasets" title="" rel="nofollow">Kaggle</a>
+</li><li><a class="urllink" href="https://datahub.io/" title="" rel="nofollow">Datahub</a>
+</li><li><a class="urllink" href="https://earthdata.nasa.gov/" title="" rel="nofollow">EarthData</a>
+</li><li><a class="urllink" href="https://crime-data-explorer.fr.cloud.gov/pages/home" title="" rel="nofollow">FBI Crime Data</a>
+</li><li><a class="urllink" href="https://www.imdb.com/interfaces/" title="" rel="nofollow">IMDb Datasets</a>
+</li></ul><div class="vspace"></div><h3>Submission</h3>
+<p>The report should be named <strong>"A1_[Your team name].pdf"</strong>. Each team submits the list of four datasets that each member found in <a class="urllink" href="https://www.dropbox.com/request/QvTg1zxT5GZ5GOriZSne" title="" rel="nofollow">this Dropbox folder</a>. The assignment is due on <strong>January 19, 2022, 23:59</strong>.
+</p>
+<div class="vspace"></div><h3>Points for this assignment</h3>
+<p>10 points
+</p>
+</div>
+
+        </td>
+       </tr>
+      </tbody></table>
+     </td>
+    </tr>
+    <tr>
+     <td id="mainsitefoot" colspan="2" rowspan="1">
+      <table summary="Wiki: Footer" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <!--PageFooterFmt-->
+       <tbody><tr>
+        <td id="footleft">
+         <span id="footchanges"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/RecentChanges" title="Recent (C)hanges in this section" accesskey="c">Recent Changes</a>
+         <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Site.AllRecentChanges" title="(A)ll Recent changes for the entire site" accesskey="a">(All)</a></span>
+         <span id="footeditsb">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Site.SideBar?action=edit" title="Edit the Side(B)ar" accesskey="b">Edit SideBar</a></span>
+        </td>
+        <td id="footmiddle">
+         <span id="footlastmod">Page last modified on January 19, 2022, at 03:25 AM</span> 
+        </td>
+        <td id="footright">
+         <span id="footedit"><a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment1?action=edit" title="(E)dit this page" accesskey="e">Edit Page</a></span>
+         <span id="foothist">| <a rel="nofollow" href="https://tobias.isenberg.cc/visualization/Assignments/Assignment1?action=diff" title="(H)istory of this page" accesskey="h">Page History</a></span> 
+        </td>
+       </tr>
+       <!--/PageFooterFmt-->
+       <tr>
+        <td id="sitesole" colspan="3" rowspan="1">
+          
+         <span id="sitepoweredby" title="Powered by PmWiki">Powered by
+          <a href="http://www.pmichaud.com/wiki/PmWiki/PmWiki" title="PmWiki Home">PmWiki</a></span> 
+        </td>
+       </tr>
+      </tbody></table>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <!-- Lean Skin v0.14.3
+  vim: expandtab sw=1 ts=1 sts=1 :
+  -->
+ 
+
+
+<div id="603ad46c-8dc6-4048-85ec-e6576faf6032-quickmenu"></div></body></html>
