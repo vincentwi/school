@@ -1,0 +1,16 @@
+,num_hidden,heads,activation,feat_drop,attn_drop,negative_slope,loss_fcn,optimizer,score
+0,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.sgd.SGD'>,0.0005890192828939815
+1,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.adadelta.Adadelta'>,0.3286604300832884
+2,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.adagrad.Adagrad'>,0.3342045800116252
+3,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.adam.Adam'>,0.3392309615865505
+4,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.rmsprop.RMSprop'>,0.37160793843661405
+5,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.sgd.SGD'>,0.10267525279213277
+6,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.adadelta.Adadelta'>,0.31022266204849086
+7,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.adagrad.Adagrad'>,0.33515133307141814
+8,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.adam.Adam'>,0.32671855643596753
+9,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.rmsprop.RMSprop'>,0.33698453106632104
+10,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.sgd.SGD'>,0.15940274940027677
+11,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.adadelta.Adadelta'>,0.34501720841300193
+12,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.adagrad.Adagrad'>,0.3510081637793833
+13,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.adam.Adam'>,0.3424556326863581
+14,4,1,<function relu at 0x7f4056dd8d40>,0,0,"[0.01, 0.1, 0.2]",BCEWithLogitsLoss(),<class 'torch.optim.rmsprop.RMSprop'>,0.3531813046891455
