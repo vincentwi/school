@@ -17,7 +17,7 @@ from torch.utils.data import DataLoader
 
 
 
-MODEL_STATE_FILE =  "model_state.pth"
+MODEL_STATE_FILE =  "model_state_1.pth"
 
 
 class BasicGraphModel(nn.Module):
