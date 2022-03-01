@@ -1,0 +1,8 @@
+networkx
+matplotlib
+scipy
+gensim
+scikit-learn
+seaborn
+pandas
+Node2Vec
