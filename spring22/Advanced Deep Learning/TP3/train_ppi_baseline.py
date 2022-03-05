@@ -1,4 +1,3 @@
-
 import argparse
 from os import path
 
@@ -16,8 +15,7 @@ from torch import nn, optim
 from torch.utils.data import DataLoader
 
 
-
-MODEL_STATE_FILE =  "model_state_1.pth"
+MODEL_STATE_FILE = path.join(path.dirname(path.abspath(__file__)), "model_state.pth")
 
 
 class BasicGraphModel(nn.Module):
@@ -39,47 +37,6 @@ class BasicGraphModel(nn.Module):
 
         return outputs
 
-class GAT(nn.Module):
-    def __init__(self,
-                 g,
-                 num_layers,
-                 in_dim,
-                 num_hidden,
-                 num_classes,
-                 heads,
-                 activation,
-                 feat_drop,
-                 attn_drop,
-                 negative_slope,
-                 residual):
-        super(GAT, self).__init__()
-        self.g = g
-        self.num_layers = num_layers
-        self.layers = nn.ModuleList()
-        self.activation = activation
-        # input projection (no residual)
-        self.layers.append(GATConv(
-            in_dim, num_hidden, heads[0],
-            feat_drop, attn_drop, negative_slope, False, self.activation))
-        # hidden layers
-        for l in range(1, num_layers):
-            # due to multi-head, the in_dim = num_hidden * num_heads
-            self.layers.append(GATConv(
-                num_hidden * heads[l-1], num_hidden, heads[l],
-                feat_drop, attn_drop, negative_slope, residual, self.activation))
-        # output projection
-        self.layers.append(GATConv(
-            num_hidden * heads[-2], num_classes, heads[-1],
-            feat_drop, attn_drop, negative_slope, residual, None))
-
-    def forward(self, inputs):
-        h = inputs
-        for l in range(self.num_layers):
-            h = self.layers[l](self.g, h).flatten(1)
-        # output projection
-        logits = self.layers[-1](self.g, h).mean(1)
-        return logits
-
 def main(args):
 
     # load dataset and create dataloader
@@ -89,46 +46,29 @@ def main(args):
     n_features, n_classes = train_dataset.features.shape[1], train_dataset.labels.shape[1]
 
     # create the model, loss function and optimizer
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    device = torch.device("cpu" if args.gpu < 0 else "cuda:" + str(args.gpu))
 
     ########### Replace this model with your own GNN implemented class ################################
-    hiddens = [512]
-    heds = [8] 
-    activations = [F.relu]
-    fdrop = [0]
-    adrop = [0]
-    nslope = [0.2]
-    losses = [nn.MultiLabelSoftMarginLoss()]
-    optimizers = [torch.optim.Adam]
-    
-    final = []
-    i = 0 #Grid Search 
-    for size in hiddens:
-          for h in heds:
-            for a in activations:
-                  for f in fdrop:
-                    for attn in adrop:
-                          for n in nslope:
-                            for loss in losses:
-                                  for optimizer in optimizers:
-                                    model = GAT(g=train_dataset.graph, num_layers=2, in_dim=n_features,
-                                                            num_hidden=size, num_classes=n_classes, heads=[h,h,int(h*1.5)],
-                                                            activation = a, feat_drop =f, attn_drop =attn,
-                                                            negative_slope=n, residual=True).to(device)
-                                    ###################################################################################################
 
-                                    loss_fcn = loss
-                                    optimizer_ = optimizer(model.parameters()) 
-                                    if args.mode == "train":
-                                            train(model, loss_fcn, device, optimizer_, train_dataloader, test_dataset)
-                                            torch.save(model.state_dict(), MODEL_STATE_FILE)
+    model = BasicGraphModel(g=train_dataset.graph, n_layers=2, input_size=n_features,
+                            hidden_size=256, output_size=n_classes, nonlinearity=F.elu).to(device)
 
-                                      # import model from file
-                                    model.load_state_dict(torch.load(MODEL_STATE_FILE))
+    ###################################################################################################
 
-                                      # test the model
-                                    score = test(model, loss_fcn, device, test_dataloader)
-                                    
+    loss_fcn = nn.BCEWithLogitsLoss()
+    optimizer = torch.optim.Adam(model.parameters())
+
+    # train
+    if args.mode == "train":
+        train(model, loss_fcn, device, optimizer, train_dataloader, test_dataset)
+        torch.save(model.state_dict(), MODEL_STATE_FILE)
+
+    # import model from file
+    model.load_state_dict(torch.load(MODEL_STATE_FILE))
+
+    # test the model
+    test(model, loss_fcn, device, test_dataloader)
+
     return model
 
 def train(model, loss_fcn, device, optimizer, train_dataloader, test_dataset):
@@ -169,7 +109,7 @@ def train(model, loss_fcn, device, optimizer, train_dataloader, test_dataset):
                 epoch_list.append(epoch)
             print("F1-Score: {:.4f} ".format(np.array(scores).mean()))
 
-    plot_f1_score(epoch_list, f1_score_list)
+    # plot_f1_score(epoch_list, f1_score_list)
 
 def test(model, loss_fcn, device, test_dataloader):
     test_scores = []
@@ -214,7 +154,7 @@ if __name__ == "__main__":
     # PARSER TO ADD OPTIONS
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode",  choices=["train", "test"], default="train")
-    #parser.add_argument("--gpu", type=int, default=-1, help="GPU to use. Set -1 to use CPU.")
+    parser.add_argument("--gpu", type=int, default=-1, help="GPU to use. Set -1 to use CPU.")
     parser.add_argument("--epochs", type=int, default=250)
     parser.add_argument("--batch-size", type=int, default=2)
     args = parser.parse_args()
