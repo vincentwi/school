@@ -1,0 +1,3121 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20214.22.0108.1039                               -->
+<workbook original-version='18.1' source-build='2021.4.3 (20214.22.0108.1039)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='dataset1_mrc_table6' inline='true' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='dataset1_mrc_table6' name='textscan.05gix1u1n9rsyq1beep0414e34c5'>
+            <connection class='textscan' directory='/Users/Marinie/Google Drive /DSBA/M2/T2/Data viz/A1/A1_Hajji_Tao' filename='dataset1_mrc_table6.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.05gix1u1n9rsyq1beep0414e34c5' name='dataset1_mrc_table6.csv' table='[dataset1_mrc_table6#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+            <column datatype='integer' name='par_pctile' ordinal='0' />
+            <column datatype='real' name='tier' ordinal='1' />
+            <column datatype='string' name='tier_name' ordinal='2' />
+            <column datatype='integer' name='par_mean' ordinal='3' />
+            <column datatype='integer' name='k_mean' ordinal='4' />
+            <column datatype='real' name='k_rank' ordinal='5' />
+            <column datatype='real' name='k_top1pc' ordinal='6' />
+            <column datatype='real' name='k_top5pc' ordinal='7' />
+            <column datatype='real' name='k_top10pc' ordinal='8' />
+            <column datatype='real' name='k_q5' ordinal='9' />
+            <column datatype='real' name='k_q4' ordinal='10' />
+            <column datatype='real' name='k_q3' ordinal='11' />
+            <column datatype='real' name='k_q2' ordinal='12' />
+            <column datatype='real' name='k_q1' ordinal='13' />
+            <column datatype='real' name='k_nowork' ordinal='14' />
+            <column datatype='real' name='married' ordinal='15' />
+            <column datatype='integer' name='k_median' ordinal='16' />
+            <column datatype='integer' name='k_median_nozero' ordinal='17' />
+            <column datatype='integer' name='count' ordinal='18' />
+            <column datatype='integer' name='tot_count' ordinal='19' />
+            <column datatype='real' name='density' ordinal='20' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.05gix1u1n9rsyq1beep0414e34c5' name='dataset1_mrc_table6.csv' table='[dataset1_mrc_table6#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+            <column datatype='integer' name='par_pctile' ordinal='0' />
+            <column datatype='real' name='tier' ordinal='1' />
+            <column datatype='string' name='tier_name' ordinal='2' />
+            <column datatype='integer' name='par_mean' ordinal='3' />
+            <column datatype='integer' name='k_mean' ordinal='4' />
+            <column datatype='real' name='k_rank' ordinal='5' />
+            <column datatype='real' name='k_top1pc' ordinal='6' />
+            <column datatype='real' name='k_top5pc' ordinal='7' />
+            <column datatype='real' name='k_top10pc' ordinal='8' />
+            <column datatype='real' name='k_q5' ordinal='9' />
+            <column datatype='real' name='k_q4' ordinal='10' />
+            <column datatype='real' name='k_q3' ordinal='11' />
+            <column datatype='real' name='k_q2' ordinal='12' />
+            <column datatype='real' name='k_q1' ordinal='13' />
+            <column datatype='real' name='k_nowork' ordinal='14' />
+            <column datatype='real' name='married' ordinal='15' />
+            <column datatype='integer' name='k_median' ordinal='16' />
+            <column datatype='integer' name='k_median_nozero' ordinal='17' />
+            <column datatype='integer' name='count' ordinal='18' />
+            <column datatype='integer' name='tot_count' ordinal='19' />
+            <column datatype='real' name='density' ordinal='20' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>par_pctile</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[par_pctile]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>par_pctile</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tier</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[tier]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>tier</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tier_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tier_name]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>tier_name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>par_mean</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[par_mean]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>par_mean</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_mean</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[k_mean]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_mean</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_rank</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_rank]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_rank</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_top1pc</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_top1pc]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_top1pc</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_top5pc</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_top5pc]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_top5pc</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_top10pc</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_top10pc]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_top10pc</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_q5</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_q5]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_q5</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_q4</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_q4]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_q4</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_q3</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_q3]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_q3</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_q2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_q2]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_q2</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_q1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_q1]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_q1</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_nowork</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[k_nowork]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_nowork</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>married</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[married]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>married</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_median</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[k_median]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_median</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>k_median_nozero</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[k_median_nozero]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>k_median_nozero</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[count]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>count</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tot_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tot_count]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>tot_count</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>density</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[density]</local-name>
+            <parent-name>[dataset1_mrc_table6.csv]</parent-name>
+            <remote-alias>density</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+      </column>
+      <column caption='Calculation1' datatype='real' name='[Calculation_710231802256093185]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='EXP([par_mean])' />
+      </column>
+      <column aggregation='None' datatype='integer' name='[K Median (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='3' formula='[k_median]' peg='0' size='3229' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='dataset1_mrc_table6.csv' datatype='table' name='[__tableau_internal_object_id__].[dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083]' role='measure' type='quantitative' />
+      <column caption='Count' datatype='integer' name='[count]' role='measure' type='quantitative' />
+      <column caption='Density' datatype='real' name='[density]' role='measure' type='quantitative' />
+      <column caption='K Mean' datatype='integer' name='[k_mean]' role='measure' type='quantitative' />
+      <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+      <column caption='K Median Nozero' datatype='integer' name='[k_median_nozero]' role='measure' type='quantitative' />
+      <column caption='K Nowork' datatype='real' name='[k_nowork]' role='measure' type='quantitative' />
+      <column caption='K Q1' datatype='real' name='[k_q1]' role='measure' type='quantitative' />
+      <column caption='K Q2' datatype='real' name='[k_q2]' role='measure' type='quantitative' />
+      <column caption='K Q3' datatype='real' name='[k_q3]' role='measure' type='quantitative' />
+      <column caption='K Q4' datatype='real' name='[k_q4]' role='measure' type='quantitative' />
+      <column caption='K Q5' datatype='real' name='[k_q5]' role='measure' type='quantitative' />
+      <column caption='K Rank' datatype='real' name='[k_rank]' role='measure' type='quantitative' />
+      <column caption='K Top10Pc' datatype='real' name='[k_top10pc]' role='measure' type='quantitative' />
+      <column caption='K Top1Pc' datatype='real' name='[k_top1pc]' role='measure' type='quantitative' />
+      <column caption='K Top5Pc' datatype='real' name='[k_top5pc]' role='measure' type='quantitative' />
+      <column caption='Married' datatype='real' name='[married]' role='measure' type='quantitative' />
+      <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+      <column caption='Par Pctile' datatype='integer' name='[par_pctile]' role='measure' type='quantitative' />
+      <column caption='Tier' datatype='real' name='[tier]' role='measure' type='quantitative' />
+      <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+      <column caption='Tot Count' datatype='integer' name='[tot_count]' role='measure' type='quantitative' />
+      <column-instance column='[k_mean]' derivation='Avg' name='[avg:k_mean:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[par_mean]' derivation='Avg' name='[avg:par_mean:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[density]' derivation='Count' name='[cnt:density:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[par_pctile]' derivation='Count' name='[cnt:par_pctile:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[par_pctile]' derivation='Max' name='[max:par_pctile:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[k_median]' derivation='None' name='[none:k_median:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[k_q1]' derivation='None' name='[none:k_q1:ok]' pivot='key' type='ordinal' />
+      <column-instance aggregation-param='25' column='[par_pctile]' derivation='Percentile' name='[prc25:par_pctile:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[density]' derivation='Sum' name='[sum:density:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[k_mean]' derivation='Sum' name='[sum:k_mean:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[k_q1]' derivation='Sum' name='[sum:k_q1:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[par_mean]' derivation='Sum' name='[sum:par_mean:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[par_pctile]' derivation='Sum' name='[sum:par_pctile:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (log par mean ,K Median)' hidden='true' name='[Action (log par mean ,K Median)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Calculation_710231802253119488:ok]' />
+          <groupfilter function='level-members' level='[none:k_median:ok]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Exclusions (K Median,log par mean )]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:k_median:qk]' />
+          <groupfilter function='level-members' level='[none:Calculation_710231802253119488:qk]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[avg:k_mean:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:k_mean:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[cnt:density:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:density:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[avg:par_mean:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[cnt:par_pctile:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[max:par_pctile:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[prc25:par_pctile:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:par_pctile:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:k_q1:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:par_mean:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:k_q1:ok]' palette='red_10_0' type='palette'>
+            <map to='#ae123a'>
+              <bucket>0.20430107</bucket>
+            </map>
+            <map to='#af123a'>
+              <bucket>0.17699115000000001</bucket>
+            </map>
+            <map to='#b1133a'>
+              <bucket>0.17045455000000001</bucket>
+            </map>
+            <map to='#b3143a'>
+              <bucket>0.16042781</bucket>
+            </map>
+            <map to='#b5153a'>
+              <bucket>0.15306122999999999</bucket>
+            </map>
+            <map to='#b7163a'>
+              <bucket>0.15068493999999999</bucket>
+            </map>
+            <map to='#b9173a'>
+              <bucket>0.15044247999999999</bucket>
+            </map>
+            <map to='#bb173a'>
+              <bucket>0.14592274999999999</bucket>
+            </map>
+            <map to='#bd183a'>
+              <bucket>0.14529913999999999</bucket>
+            </map>
+            <map to='#bf193a'>
+              <bucket>0.14432991000000001</bucket>
+            </map>
+            <map to='#c11a3b'>
+              <bucket>0.13978494999999999</bucket>
+            </map>
+            <map to='#c31c3b'>
+              <bucket>0.13913043999999999</bucket>
+            </map>
+            <map to='#c51d3b'>
+              <bucket>0.13793103000000001</bucket>
+            </map>
+            <map to='#c71e3b'>
+              <bucket>0.13392857</bucket>
+            </map>
+            <map to='#c8203b'>
+              <bucket>0.13333333999999999</bucket>
+            </map>
+            <map to='#ca213c'>
+              <bucket>0.13186813999999999</bucket>
+            </map>
+            <map to='#cc233c'>
+              <bucket>0.12962963</bucket>
+            </map>
+            <map to='#ce243c'>
+              <bucket>0.12891986999999999</bucket>
+            </map>
+            <map to='#cf263c'>
+              <bucket>0.12690356</bucket>
+            </map>
+            <map to='#d1273c'>
+              <bucket>0.12666667000000001</bucket>
+            </map>
+            <map to='#d3293d'>
+              <bucket>0.12592592999999999</bucket>
+            </map>
+            <map to='#d42b3d'>
+              <bucket>0.125</bucket>
+            </map>
+            <map to='#d62c3e'>
+              <bucket>0.12359551000000001</bucket>
+            </map>
+            <map to='#d72e3e'>
+              <bucket>0.12280702</bucket>
+            </map>
+            <map to='#d9303f'>
+              <bucket>0.11971830999999999</bucket>
+            </map>
+            <map to='#da313f'>
+              <bucket>0.11851852</bucket>
+            </map>
+            <map to='#db333f'>
+              <bucket>0.11549295</bucket>
+            </map>
+            <map to='#dd3540'>
+              <bucket>0.11217949000000001</bucket>
+            </map>
+            <map to='#de3640'>
+              <bucket>0.11206897</bucket>
+            </map>
+            <map to='#e03841'>
+              <bucket>0.11111111</bucket>
+            </map>
+            <map to='#e13a41'>
+              <bucket>0.10967742</bucket>
+            </map>
+            <map to='#e23c42'>
+              <bucket>0.10801394</bucket>
+            </map>
+            <map to='#e33e43'>
+              <bucket>0.10749185999999999</bucket>
+            </map>
+            <map to='#e44044'>
+              <bucket>0.10679611999999999</bucket>
+            </map>
+            <map to='#e54244'>
+              <bucket>0.10497238</bucket>
+            </map>
+            <map to='#e74445'>
+              <bucket>0.10443038</bucket>
+            </map>
+            <map to='#e84746'>
+              <bucket>0.10430463</bucket>
+            </map>
+            <map to='#e94946'>
+              <bucket>0.10256410000000001</bucket>
+            </map>
+            <map to='#ea4b47'>
+              <bucket>0.10212766</bucket>
+            </map>
+            <map to='#eb4d48'>
+              <bucket>0.10045662</bucket>
+            </map>
+            <map to='#ec4f49'>
+              <bucket>0.098901100000000006</bucket>
+            </map>
+            <map to='#ec514a'>
+              <bucket>0.098654710000000007</bucket>
+            </map>
+            <map to='#ed544b'>
+              <bucket>0.097777775999999997</bucket>
+            </map>
+            <map to='#ee564b'>
+              <bucket>0.096774198000000006</bucket>
+            </map>
+            <map to='#ef584c'>
+              <bucket>0.095754407</bucket>
+            </map>
+            <map to='#ef5b4d'>
+              <bucket>0.095744683999999997</bucket>
+            </map>
+            <map to='#f05d4e'>
+              <bucket>0.095522388999999999</bucket>
+            </map>
+            <map to='#f15f4f'>
+              <bucket>0.095505618</bucket>
+            </map>
+            <map to='#f26250'>
+              <bucket>0.095238096999999994</bucket>
+            </map>
+            <map to='#f26351'>
+              <bucket>0.095070422000000002</bucket>
+            </map>
+            <map to='#f26553'>
+              <bucket>0.094240836999999994</bucket>
+            </map>
+            <map to='#f36755'>
+              <bucket>0.09375</bucket>
+            </map>
+            <map to='#f36957'>
+              <bucket>0.093023254999999999</bucket>
+            </map>
+            <map to='#f46b58'>
+              <bucket>0.092715233999999994</bucket>
+            </map>
+            <map to='#f46d5a'>
+              <bucket>0.091397852000000002</bucket>
+            </map>
+            <map to='#f46f5c'>
+              <bucket>0.089958160999999995</bucket>
+            </map>
+            <map to='#f5715e'>
+              <bucket>0.089887641000000004</bucket>
+            </map>
+            <map to='#f5735f'>
+              <bucket>0.089866161</bucket>
+            </map>
+            <map to='#f67561'>
+              <bucket>0.089795917000000003</bucket>
+            </map>
+            <map to='#f67763'>
+              <bucket>0.086705208000000006</bucket>
+            </map>
+            <map to='#f77a65'>
+              <bucket>0.086419754000000001</bucket>
+            </map>
+            <map to='#f77c66'>
+              <bucket>0.085057466999999998</bucket>
+            </map>
+            <map to='#f77e68'>
+              <bucket>0.083333335999999994</bucket>
+            </map>
+            <map to='#f8806a'>
+              <bucket>0.082488171999999998</bucket>
+            </map>
+            <map to='#f8826b'>
+              <bucket>0.081730767999999995</bucket>
+            </map>
+            <map to='#f9846d'>
+              <bucket>0.081128746000000002</bucket>
+            </map>
+            <map to='#f9866f'>
+              <bucket>0.079012341999999999</bucket>
+            </map>
+            <map to='#f98870'>
+              <bucket>0.078431374999999998</bucket>
+            </map>
+            <map to='#fa8a72'>
+              <bucket>0.078260868999999997</bucket>
+            </map>
+            <map to='#fa8c75'>
+              <bucket>0.078125</bucket>
+            </map>
+            <map to='#fa8e77'>
+              <bucket>0.077319584999999996</bucket>
+            </map>
+            <map to='#fa9079'>
+              <bucket>0.076923080000000005</bucket>
+            </map>
+            <map to='#fb927c'>
+              <bucket>0.076825663000000002</bucket>
+            </map>
+            <map to='#fb937e'>
+              <bucket>0.076677314999999996</bucket>
+            </map>
+            <map to='#fb9580'>
+              <bucket>0.076388888000000002</bucket>
+            </map>
+            <map to='#fb9782'>
+              <bucket>0.075697212999999999</bucket>
+            </map>
+            <map to='#fb9985'>
+              <bucket>0.075422630000000004</bucket>
+            </map>
+            <map to='#fc9b87'>
+              <bucket>0.074585630999999999</bucket>
+            </map>
+            <map to='#fc9d89'>
+              <bucket>0.074324324999999997</bucket>
+            </map>
+            <map to='#fc9e8c'>
+              <bucket>0.07421875</bucket>
+            </map>
+            <map to='#fca08e'>
+              <bucket>0.072605244999999999</bucket>
+            </map>
+            <map to='#fca290'>
+              <bucket>0.071723431000000004</bucket>
+            </map>
+            <map to='#fda492'>
+              <bucket>0.071428574999999994</bucket>
+            </map>
+            <map to='#fda595'>
+              <bucket>0.071186438000000005</bucket>
+            </map>
+            <map to='#fda797'>
+              <bucket>0.069672129999999999</bucket>
+            </map>
+            <map to='#fda999'>
+              <bucket>0.069321536000000003</bucket>
+            </map>
+            <map to='#fdab9c'>
+              <bucket>0.067546278000000001</bucket>
+            </map>
+            <map to='#fead9e'>
+              <bucket>0.066945605000000005</bucket>
+            </map>
+            <map to='#feafa0'>
+              <bucket>0.063291139999999996</bucket>
+            </map>
+            <map to='#feb0a2'>
+              <bucket>0.060716141000000001</bucket>
+            </map>
+            <map to='#feb2a4'>
+              <bucket>0.058823529999999999</bucket>
+            </map>
+            <map to='#feb4a7'>
+              <bucket>0.058365759000000003</bucket>
+            </map>
+            <map to='#feb6a9'>
+              <bucket>0.057788942000000003</bucket>
+            </map>
+            <map to='#feb8ab'>
+              <bucket>0.057046979999999997</bucket>
+            </map>
+            <map to='#febaad'>
+              <bucket>0.051975053</bucket>
+            </map>
+            <map to='#febcaf'>
+              <bucket>0.051903116999999999</bucket>
+            </map>
+            <map to='#ffbeb2'>
+              <bucket>0.042682927000000002</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='par_pctile' />
+        <field-sort-custom-order field='tier' />
+        <field-sort-custom-order field='tier_name' />
+        <field-sort-custom-order field='par_mean' />
+        <field-sort-custom-order field='Calculation_710231802256093185' />
+        <field-sort-custom-order field='Calculation_710231802253119488' />
+        <field-sort-custom-order field='k_mean' />
+        <field-sort-custom-order field='k_rank' />
+        <field-sort-custom-order field='k_top1pc' />
+        <field-sort-custom-order field='k_top5pc' />
+        <field-sort-custom-order field='k_top10pc' />
+        <field-sort-custom-order field='k_q5' />
+        <field-sort-custom-order field='k_q4' />
+        <field-sort-custom-order field='k_q3' />
+        <field-sort-custom-order field='k_q2' />
+        <field-sort-custom-order field='k_q1' />
+        <field-sort-custom-order field='k_nowork' />
+        <field-sort-custom-order field='married' />
+        <field-sort-custom-order field='k_median' />
+        <field-sort-custom-order field='k_median_nozero' />
+        <field-sort-custom-order field='count' />
+        <field-sort-custom-order field='tot_count' />
+        <field-sort-custom-order field='density' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='dataset1_mrc_table6.csv' id='dataset1_mrc_table6.csv_3216FF21288846F6AB4B31C8AE8A4083'>
+            <properties context=''>
+              <relation connection='textscan.05gix1u1n9rsyq1beep0414e34c5' name='dataset1_mrc_table6.csv' table='[dataset1_mrc_table6#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+                  <column datatype='integer' name='par_pctile' ordinal='0' />
+                  <column datatype='real' name='tier' ordinal='1' />
+                  <column datatype='string' name='tier_name' ordinal='2' />
+                  <column datatype='integer' name='par_mean' ordinal='3' />
+                  <column datatype='integer' name='k_mean' ordinal='4' />
+                  <column datatype='real' name='k_rank' ordinal='5' />
+                  <column datatype='real' name='k_top1pc' ordinal='6' />
+                  <column datatype='real' name='k_top5pc' ordinal='7' />
+                  <column datatype='real' name='k_top10pc' ordinal='8' />
+                  <column datatype='real' name='k_q5' ordinal='9' />
+                  <column datatype='real' name='k_q4' ordinal='10' />
+                  <column datatype='real' name='k_q3' ordinal='11' />
+                  <column datatype='real' name='k_q2' ordinal='12' />
+                  <column datatype='real' name='k_q1' ordinal='13' />
+                  <column datatype='real' name='k_nowork' ordinal='14' />
+                  <column datatype='real' name='married' ordinal='15' />
+                  <column datatype='integer' name='k_median' ordinal='16' />
+                  <column datatype='integer' name='k_median_nozero' ordinal='17' />
+                  <column datatype='integer' name='count' ordinal='18' />
+                  <column datatype='integer' name='tot_count' ordinal='19' />
+                  <column datatype='real' name='density' ordinal='20' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='&lt;Attending college with unsufficient data: Relationship between Parents Mean Income and Kids Median Income  &gt;'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Parents Average Income per Tier Name School</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run fontsize='11'>On average, we notice a constant amount of parent&apos;s income for each tier schools name. However, due the the unavailable data on the number of the parents, we cannot conclude our statement. </run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column-instance column='[par_mean]' derivation='Avg' name='[avg:par_mean:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[avg:par_mean:qk]' scope='rows' value='Avg. Parent Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#499894' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[avg:par_mean:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</cols>
+      </table>
+      <simple-id uuid='{C0C84E39-7443-4315-B4AC-181B659C87A8}' />
+    </worksheet>
+    <worksheet name='Attending college with unsufficient data : par mean and k median '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='8'>(13) Attending college with unsufficient data</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Attending college with insufficient data&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{8CB97501-64B3-413B-91D2-F28981F4C2FD}' />
+    </worksheet>
+    <worksheet name='Four-year for-profit: par mean and k median (2)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='8'>(10) Four-year for profit</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Four-year for-profit&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{5E798275-7ACE-446D-9BBD-DF13F528478A}' />
+    </worksheet>
+    <worksheet name='Highly selected private: par mean and k median (3)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Book,serif' fontsize='8'>(4) Highly selective public</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Highly selective private&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{19603A58-C3E0-481E-95A7-C991EE426A02}' />
+    </worksheet>
+    <worksheet name='Highly selected public: par mean and k median (4)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Book,serif' fontsize='8'>(3) Highly selective public</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Highly selective public&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log Parents Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{A95C46BE-F680-4753-9B25-48EF1EF84B59}' />
+    </worksheet>
+    <worksheet name='Income correlation between kid and parents income with parents income percentile'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Book,serif' fontsize='14'>Income correlation between kids and parents income illustrating kids top 10 percentile</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run fontsize='12'>Here we highlight the presence of outliers among  kids with high income whose parents earn the least. We further reduced the impact of outliers by using the median measure instead of the mean. </run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column caption='K Top10Pc' datatype='real' name='[k_top10pc]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_top10pc]' derivation='None' name='[none:k_top10pc:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[par_pctile]' derivation='None' name='[none:par_pctile:qk]' pivot='key' type='quantitative' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Par Pctile' datatype='integer' name='[par_pctile]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' included-values='non-null' />
+          <filter class='quantitative' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]' included-values='in-range'>
+            <min>0</min>
+            <max>100</max>
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</column>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='cols' value='Log of Parents Mean Income' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='rows' value='Kids Median Income ' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]' palette='orange_blue_diverging_10_0' reverse='true' type='interpolated' />
+            <encoding attr='color' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_top10pc:qk]' palette='red_blue_diverging_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_top10pc:qk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <reference-line axis-column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' enable-instant-analytics='true' formula='constant' id='refline1' label-type='automatic' scope='per-table' value='900' value-column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='239' />
+                <format attr='size' value='0.71364641189575195' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</cols>
+      </table>
+      <simple-id uuid='{7AA0540F-8D9D-4A1A-9F55-A79231275FC0}' />
+    </worksheet>
+    <worksheet name='Income correlation between kids and parents '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Light,serif' fontsize='16'>Æ </run>
+            <run fontalignment='1' fontname='Tableau Light,serif,serif' fontsize='16'>Attending college with unsufficient data: Relationship between Parents Mean Income and Kids Median Income</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000' fontname='Times New Roman,serif' fontsize='16'>Æ </run>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='16'>Æ </run>
+            <run>Æ&#10;&#10;</run>
+            <run fontcolor='#000000' fontname='Times New Roman,serif' fontsize='16'>Æ </run>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='16'>Æ </run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run fontsize='12'>There seems to be a weak positive relationship between the parents and kids income mean. This is strongly influenced by the presence of outliers. Indeed, a possible explanation would be that the kids whose parents went to Ivy League schools, tend to earn a significantly higher salary than the kids whose parents are in the same earning&apos;s percentile.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Mean' datatype='integer' name='[k_mean]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_mean]' derivation='None' name='[none:k_mean:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[par_pctile]' derivation='None' name='[none:par_pctile:qk]' pivot='key' type='quantitative' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Par Pctile' datatype='integer' name='[par_pctile]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_mean:qk]' included-values='non-null' />
+          <filter class='quantitative' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]' included-values='in-range'>
+            <min>0</min>
+            <max>100</max>
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_mean:qk]</column>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='cols' value='Log of Parents Mean Income' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_mean:qk]' scope='rows' value='Kids Mean Income ' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]' palette='orange_blue_diverging_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]' value='Par Percentile'>
+              <formatted-text>
+                <run>Par Percentile</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value='circle' />
+                <format attr='size' value='0.77961325645446777' />
+                <format attr='mark-transparency' value='231' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_mean:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</cols>
+      </table>
+      <simple-id uuid='{6E457B1A-868B-4DA4-B569-C74038CCAC3D}' />
+    </worksheet>
+    <worksheet name='Ivy Plus: par mean and k median (5)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Light,serif,serif' fontsize='8'>(1) Ivy Plus</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Ivy Plus&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.18591159582138062' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{A6B84C33-B74E-4E8B-9698-293A8BC50A02}' />
+    </worksheet>
+    <worksheet name='Kids average income per parent tier schools '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='16'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run fontsize='12'>There is an apparent link between kids financial situation and parents&apos; education. This is well captured by the gap between the two highest earnings group whose parent went to elite schools and Ivy leagues school and two least  earnings group whose parents never attended college or were late attender</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column-instance column='[k_median]' derivation='Avg' name='[avg:k_median:qk]' pivot='key' type='quantitative' />
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column caption='K Top1Pc' datatype='real' name='[k_top1pc]' role='measure' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[k_top1pc]' derivation='Sum' name='[sum:k_top1pc:qk]' pivot='key' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[avg:k_median:qk]' scope='rows' value='Average Kids Median Income ' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:k_top1pc:qk]' palette='blue_teal_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:k_top1pc:qk]' value='Kids Top 1 Percentile &#10;'>
+              <formatted-text>
+                <run>Kids Top 1 Percentile &#10;</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:k_top1pc:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[avg:k_median:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</cols>
+        <show-full-range>
+          <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[K Median (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{99E90974-EABE-4D2C-B7F7-0652895B8A1E}' />
+    </worksheet>
+    <worksheet name='Late attender (23-28): par mean and k median (6)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='8'>(14) Late attender (23-28)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Late attender (ages 23-28)&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Logs of Parents Mean Income' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.16392265260219574' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{E37DADD2-5AF2-4C08-9CD4-422E7340052C}' />
+    </worksheet>
+    <worksheet name='Less than two-year schools of any type: par mean and k median (7)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='8'>(12)  Less than two-year schools of any type</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Less than two-year schools of any type&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Income' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{1C112E6B-0D9A-4333-9D42-D0FBAA3D7BB0}' />
+    </worksheet>
+    <worksheet name='Never attender college (before 2013): par mean and k median (8)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='8'>(15) Never attended college (before 2013)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Never attended college (before year 2013)&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{C2E5AB9F-EF01-4D80-880E-B83135BBC101}' />
+    </worksheet>
+    <worksheet name='Nonselective four-year private not-for-profit: par mean and k median (9)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Book,serif' fontsize='8'>(8) Nonselective four-year private not-for-profit</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Nonselective four-year private not-for-profit&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{0FA24AC6-CB09-406F-A09C-D1923C89382D}' />
+    </worksheet>
+    <worksheet name='Nonselective four-year public: par mean and k median (10)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Book,serif' fontsize='8'>(7) Selective private</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[Exclusions (K Median,log par mean )]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-exclude='true' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:k_median:qk]' />
+              <groupfilter function='level-members' level='[none:Calculation_710231802253119488:qk]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Nonselective four-year public&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[Exclusions (K Median,log par mean )]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{DAC0BE37-E5FB-4660-83BE-B6FEB0A064A7}' />
+    </worksheet>
+    <worksheet name='Other elite schools (private and public): par mean and k median (11)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Book,serif' fontsize='8'>(2) Other elite schools (private and public)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Other elite schools (public and private)&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{0DFB0F94-D993-4E36-B04C-11773D776829}' />
+    </worksheet>
+    <worksheet name='Selective private: par mean and k median (12)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Book,serif' fontsize='8'>(6) Selective private</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Selective private&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{6088800F-B6E7-4EF7-9EE7-7F64E70C59C6}' />
+    </worksheet>
+    <worksheet name='Selective public: par mean and k median (13)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Book,serif' fontsize='8'>(5) Selective public</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Selective public&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{22688B1B-D2A9-4FA4-A726-1AA890F51B8C}' />
+    </worksheet>
+    <worksheet name='Two-year (public and private not-for-profit): par mean and k median (14)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Book,serif' fontsize='8'>(9) Nonselective four-year private not-for-profit</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Two-year (public and private not-for-profit)&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log Parents Mean Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{A8770452-DEC1-4C83-9E39-79806984846B}' />
+    </worksheet>
+    <worksheet name='Two-year for-profit: par mean and k median (15)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='8'>(11) Two-year for-profit</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_mrc_table6' name='federated.07yiovp1y00l6z11q2b1l0a5qqs1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07yiovp1y00l6z11q2b1l0a5qqs1'>
+            <column caption='log par mean ' datatype='real' name='[Calculation_710231802253119488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([par_mean] + 1)' />
+            </column>
+            <column caption='K Median' datatype='integer' name='[k_median]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_710231802253119488]' derivation='None' name='[none:Calculation_710231802253119488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[k_median]' derivation='None' name='[none:k_median:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tier_name]' derivation='None' name='[none:tier_name:nk]' pivot='key' type='nominal' />
+            <column caption='Par Mean' datatype='integer' name='[par_mean]' role='measure' type='quantitative' />
+            <column caption='Tier Name' datatype='string' name='[tier_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]'>
+            <groupfilter function='member' level='[none:tier_name:nk]' member='&quot;Two-year for-profit&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:tier_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]' scope='cols' value='Kids Median Income ' />
+            <format attr='title' class='0' field='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]' scope='rows' value='Log of Parents Income ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.0099999997764825821' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:Calculation_710231802253119488:qk]</rows>
+        <cols>[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_median:qk]</cols>
+      </table>
+      <simple-id uuid='{A8C3B061-99FA-42F4-A496-865A3D632FFA}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='98400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Income correlation between kids and parents ' show-caption='true' w='98400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='5750' id='8' name='Income correlation between kids and parents ' pane-specification-id='0' param='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]' type-v2='color' w='12900' x='82100' y='12125' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='22' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='21' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Income correlation between kids and parents ' show-caption='true' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5750' id='8' name='Income correlation between kids and parents ' pane-specification-id='0' param='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]' type-v2='color' w='12900' x='82100' y='12125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8996F99B-900E-415C-B019-F6D204206B57}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 3'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='95200' x='800' y='1000'>
+              <zone h='98000' id='3' name='Kids average income per parent tier schools ' show-caption='true' w='95200' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='32' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='3200' x='96000' y='1000' />
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='9500' id='8' name='Kids average income per parent tier schools ' pane-specification-id='0' param='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:k_top1pc:qk]' type-v2='color' w='14000' x='81800' y='3250' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='16' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='15' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Kids average income per parent tier schools ' show-caption='true' w='95200' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9500' id='8' name='Kids average income per parent tier schools ' pane-specification-id='0' param='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:k_top1pc:qk]' type-v2='color' w='14000' x='81800' y='3250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{884D2C16-C8F4-461A-98A8-A03FF0CA9867}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='9' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='7' type-v2='layout-basic' w='98400' x='800' y='1000'>
+              <zone h='98000' id='3' name='&lt;Attending college with unsufficient data: Relationship between Parents Mean Income and Kids Median Income  &gt;' show-caption='true' w='98400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontalignment='1'>&lt;Sheet Name&gt;</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='15' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='14' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='&lt;Attending college with unsufficient data: Relationship between Parents Mean Income and Kids Median Income  &gt;' show-caption='true' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{FF5A78A2-1AC8-4C3B-AF1F-FFCE6D06D6BC}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 5'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='85600' x='800' y='1000'>
+              <zone h='98000' id='3' name='Income correlation between kid and parents income with parents income percentile' show-caption='true' w='85600' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='128' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='12800' x='86400' y='1000' />
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='9500' id='8' name='Income correlation between kid and parents income with parents income percentile' pane-specification-id='0' param='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_top10pc:qk]' type-v2='color' w='14000' x='85100' y='6375' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='14' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='13' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Income correlation between kid and parents income with parents income percentile' show-caption='true' w='85600' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9500' id='8' name='Income correlation between kid and parents income with parents income percentile' pane-specification-id='0' param='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_top10pc:qk]' type-v2='color' w='14000' x='85100' y='6375'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{B858357E-77E9-4D65-A4DA-9B4059163617}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Relationship between Parents Mean Income and Kids Median Income '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='25' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='5250' id='26' type-v2='title' w='98400' x='800' y='1000'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='92750' id='23' type-v2='layout-basic' w='98400' x='800' y='6250'>
+              <zone h='24843' id='3' name='Ivy Plus: par mean and k median (5)' w='26100' x='800' y='6250'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='24843' id='5' name='Other elite schools (private and public): par mean and k median (11)' w='24900' x='26900' y='6250'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='24843' id='6' name='Highly selected public: par mean and k median (4)' w='24900' x='51800' y='6250'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='32178' id='7' name='Highly selected private: par mean and k median (3)' w='22500' x='76700' y='6250'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='21532' id='8' name='Selective public: par mean and k median (13)' w='26100' x='800' y='31093'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='21532' id='9' name='Selective private: par mean and k median (12)' w='24900' x='26900' y='31093'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='21532' id='10' name='Nonselective four-year public: par mean and k median (10)' w='24900' x='51800' y='31093'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='30286' id='11' name='Nonselective four-year private not-for-profit: par mean and k median (9)' w='22500' x='76700' y='38428'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='23660' id='12' name='Two-year (public and private not-for-profit): par mean and k median (14)' w='26100' x='800' y='52625'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='23660' id='13' name='Four-year for-profit: par mean and k median (2)' w='24900' x='26900' y='52625'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='23660' id='14' name='Two-year for-profit: par mean and k median (15)' w='24900' x='51800' y='52625'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='30286' id='15' name='Less than two-year schools of any type: par mean and k median (7)' w='22500' x='76700' y='68714'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='22715' id='16' name='Attending college with unsufficient data : par mean and k median ' w='26100' x='800' y='76285'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='22715' id='17' name='Late attender (23-28): par mean and k median (6)' w='24900' x='26900' y='76285'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='22715' id='18' name='Never attender college (before 2013): par mean and k median (8)' w='24900' x='51800' y='76285'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontalignment='1'>&lt;Sheet Name&gt;</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='3050' minheight='3050' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='32' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='31' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='5250' id='26' type-v2='title' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='191' h='24843' id='3' is-fixed='true' name='Ivy Plus: par mean and k median (5)' w='26100' x='800' y='6250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='191' h='24843' id='5' is-fixed='true' name='Other elite schools (private and public): par mean and k median (11)' w='24900' x='26900' y='6250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='191' h='24843' id='6' is-fixed='true' name='Highly selected public: par mean and k median (4)' w='24900' x='51800' y='6250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='249' h='32178' id='7' is-fixed='true' name='Highly selected private: par mean and k median (3)' w='22500' x='76700' y='6250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='164' h='21532' id='8' is-fixed='true' name='Selective public: par mean and k median (13)' w='26100' x='800' y='31093'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='164' h='21532' id='9' is-fixed='true' name='Selective private: par mean and k median (12)' w='24900' x='26900' y='31093'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='164' h='21532' id='10' is-fixed='true' name='Nonselective four-year public: par mean and k median (10)' w='24900' x='51800' y='31093'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='235' h='30286' id='11' is-fixed='true' name='Nonselective four-year private not-for-profit: par mean and k median (9)' w='22500' x='76700' y='38428'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='181' h='23660' id='12' is-fixed='true' name='Two-year (public and private not-for-profit): par mean and k median (14)' w='26100' x='800' y='52625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='181' h='23660' id='13' is-fixed='true' name='Four-year for-profit: par mean and k median (2)' w='24900' x='26900' y='52625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='181' h='23660' id='14' is-fixed='true' name='Two-year for-profit: par mean and k median (15)' w='24900' x='51800' y='52625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='234' h='30286' id='15' is-fixed='true' name='Less than two-year schools of any type: par mean and k median (7)' w='22500' x='76700' y='68714'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='174' h='22715' id='16' is-fixed='true' name='Attending college with unsufficient data : par mean and k median ' w='26100' x='800' y='76285'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='174' h='22715' id='17' is-fixed='true' name='Late attender (23-28): par mean and k median (6)' w='24900' x='26900' y='76285'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='174' h='22715' id='18' is-fixed='true' name='Never attender college (before 2013): par mean and k median (8)' w='24900' x='51800' y='76285'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{952A46EB-2DA0-44F7-8FBD-87450FCB3E6B}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Income correlation between kids and parents '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:par_pctile:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E0AA52BC-8C29-48F2-87A4-6E6156A96116}' />
+    </window>
+    <window class='worksheet' name='Income correlation between kid and parents income with parents income percentile'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[none:k_top10pc:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{37EB983C-CBFF-4E65-86CD-C827610C698B}' />
+    </window>
+    <window class='worksheet' name='Attending college with unsufficient data : par mean and k median '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DA5E64D3-94FC-4BC8-92FC-5334FA08A8D4}' />
+    </window>
+    <window class='worksheet' name='Four-year for-profit: par mean and k median (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8001F69F-ED2D-4782-AE20-993BDC9F234D}' />
+    </window>
+    <window class='worksheet' name='Highly selected private: par mean and k median (3)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{90C65BB6-31CF-4EC6-95FC-9C40230ABB50}' />
+    </window>
+    <window class='worksheet' name='Highly selected public: par mean and k median (4)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FD48D2AA-B612-4323-B10D-72642EC4EFE3}' />
+    </window>
+    <window class='worksheet' name='Ivy Plus: par mean and k median (5)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4FDAECAE-D710-4C2F-86AA-4442BAB2B198}' />
+    </window>
+    <window class='worksheet' name='Late attender (23-28): par mean and k median (6)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7CFA7FDC-08C2-4496-9B74-D9A76BA3995F}' />
+    </window>
+    <window class='worksheet' name='Less than two-year schools of any type: par mean and k median (7)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F5DDF442-9EF1-4A7A-B3C9-041DEF444E3C}' />
+    </window>
+    <window class='worksheet' name='Never attender college (before 2013): par mean and k median (8)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{74A7A2EA-7735-4571-909E-6FE692FF3743}' />
+    </window>
+    <window class='worksheet' name='Nonselective four-year private not-for-profit: par mean and k median (9)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{69BA042E-43D2-4666-9B0F-0F3E899654D3}' />
+    </window>
+    <window class='worksheet' name='Nonselective four-year public: par mean and k median (10)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AADC6475-4D71-444F-B5D3-0CE62A31BC59}' />
+    </window>
+    <window class='worksheet' name='Other elite schools (private and public): par mean and k median (11)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{117C4C65-E87C-4599-A558-BC2575A0C777}' />
+    </window>
+    <window class='worksheet' name='Selective private: par mean and k median (12)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4F5B711C-91D6-4F7B-832B-0117E7928B67}' />
+    </window>
+    <window class='worksheet' name='Selective public: par mean and k median (13)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{482E773B-224F-4517-A312-1A6504C072F0}' />
+    </window>
+    <window class='worksheet' name='Two-year (public and private not-for-profit): par mean and k median (14)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6FA12FA7-13B7-4FF8-B353-F3FB4907A49B}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Two-year for-profit: par mean and k median (15)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{00151C92-80F2-4BED-A4FB-7FB4ADC73C63}' />
+    </window>
+    <window class='worksheet' name='Kids average income per parent tier schools '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.07yiovp1y00l6z11q2b1l0a5qqs1].[sum:k_top1pc:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{08949080-2937-4210-8200-2E4897CA6720}' />
+    </window>
+    <window class='worksheet' name='&lt;Attending college with unsufficient data: Relationship between Parents Mean Income and Kids Median Income  &gt;'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C6580B1D-2578-474E-B729-29A85BE62453}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Income correlation between kids and parents '>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{FC2D0483-5216-44BF-95FC-9E215FCBF4E3}' />
+    </window>
+    <window class='dashboard' name='Dashboard 5'>
+      <viewpoints>
+        <viewpoint name='Income correlation between kid and parents income with parents income percentile'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{B42C92A1-6D5C-4D74-A918-C6F72AF152F6}' />
+    </window>
+    <window class='dashboard' name='Relationship between Parents Mean Income and Kids Median Income '>
+      <viewpoints>
+        <viewpoint name='Attending college with unsufficient data : par mean and k median '>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Four-year for-profit: par mean and k median (2)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Highly selected private: par mean and k median (3)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Highly selected public: par mean and k median (4)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Ivy Plus: par mean and k median (5)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Late attender (23-28): par mean and k median (6)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Less than two-year schools of any type: par mean and k median (7)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Never attender college (before 2013): par mean and k median (8)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Nonselective four-year private not-for-profit: par mean and k median (9)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Nonselective four-year public: par mean and k median (10)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Other elite schools (private and public): par mean and k median (11)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Selective private: par mean and k median (12)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Selective public: par mean and k median (13)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Two-year (public and private not-for-profit): par mean and k median (14)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Two-year for-profit: par mean and k median (15)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{586C354F-63F9-41B9-B0FF-2B9635F1E4C1}' />
+    </window>
+    <window class='dashboard' name='Dashboard 3'>
+      <viewpoints>
+        <viewpoint name='Kids average income per parent tier schools '>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='6' />
+      <simple-id uuid='{2F8CB80D-0A17-430E-A064-4C113F40D718}' />
+    </window>
+    <window class='dashboard' name='Dashboard 4'>
+      <viewpoints>
+        <viewpoint name='&lt;Attending college with unsufficient data: Relationship between Parents Mean Income and Kids Median Income  &gt;'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='4' />
+      <simple-id uuid='{196D8CE9-EEE0-49D2-BDF2-2C76116E893B}' />
+    </window>
+  </windows>
+</workbook>
