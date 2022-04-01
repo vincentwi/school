@@ -1,0 +1,8 @@
+altair
+pandas
+streamlit
+click==8
+numpy
+matplotlib
+seaborn
+pillow
