@@ -1,0 +1,1 @@
+@book{norman_welchman_janaway_2010, place={Cambridge}, series={The Cambridge Edition of the Works of Schopenhauer}, title={Schopenhauer: 'The World as Will and Representation'}, volume={1}, DOI={10.1017/CBO9780511780943}, publisher={Cambridge University Press}, year={2010}, collection={The Cambridge Edition of the Works of Schopenhauer}}
