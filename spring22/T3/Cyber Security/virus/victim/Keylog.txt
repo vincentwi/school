@@ -1,0 +1,63 @@
+2022-05-06 17:54:35,545: This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2022-05-06 17:57:19,874: This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2022-05-06 17:57:23,418: Key.ctrl
+2022-05-06 17:57:23,632: 'c'
+2022-05-06 18:00:22,539: This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2022-05-06 18:11:30,592: Key.ctrl
+2022-05-06 18:11:30,782: 'c'
+2022-05-06 18:12:07,854: This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2022-05-06 18:12:10,775: Key.ctrl
+2022-05-06 18:12:10,948: 'c'
+2022-05-06 18:13:38,703: This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2022-05-06 18:13:54,683: Key.ctrl
+2022-05-06 18:13:54,809: 'c'
+2022-05-06 18:13:57,246: This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2022-05-06 18:14:07,240: Key.cmd
+2022-05-06 18:14:07,911: Key.cmd
+2022-05-06 18:14:08,018: 'c'
+2022-05-06 18:14:08,553: Key.cmd
+2022-05-06 18:14:08,670: 't'
+2022-05-06 18:14:11,446: Key.cmd
+2022-05-06 18:14:11,666: Key.up
+2022-05-06 18:14:12,082: Key.cmd
+2022-05-06 18:14:12,817: Key.cmd
+2022-05-06 18:14:12,973: 'v'
+2022-05-06 18:14:13,477: Key.shift_r
+2022-05-06 18:14:13,682: Key.up
+2022-05-06 18:14:13,882: 'v'
+2022-05-06 18:14:14,249: Key.enter
+2022-05-06 18:14:30,010: Key.esc
+2022-05-06 18:14:44,016: Key.space
+2022-05-06 18:14:46,041: Key.media_volume_up
+2022-05-06 18:14:46,286: Key.media_volume_up
+2022-05-06 18:14:46,480: Key.media_volume_up
+2022-05-06 18:14:46,713: Key.media_volume_up
+2022-05-06 18:14:47,057: Key.media_volume_up
+2022-05-06 18:14:47,496: Key.media_volume_down
+2022-05-06 18:14:50,236: Key.space
+2022-05-06 18:14:51,806: Key.up
+2022-05-06 18:14:52,128: Key.space
+2022-05-06 18:14:54,903: Key.space
+2022-05-06 18:15:41,192: Key.ctrl
+2022-05-06 18:15:41,300: 'c'
+2022-05-06 18:15:46,216: This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2022-05-06 18:15:57,842: Key.space
+2022-05-06 18:15:58,332: Key.space
+2022-05-06 18:16:08,756: Key.alt
+2022-05-06 18:16:08,885: 'ç'
+2022-05-06 18:16:09,410: Key.ctrl
+2022-05-06 18:16:09,530: 'c'
+2022-05-06 18:16:31,670: This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients.
+2022-05-06 18:16:38,640: 'h'
+2022-05-06 18:16:38,789: 'e'
+2022-05-06 18:16:38,955: 'l'
+2022-05-06 18:16:39,115: 'l'
+2022-05-06 18:16:39,317: 'o'
+2022-05-06 18:16:40,308: Key.enter
+2022-05-06 18:16:44,064: Key.up
+2022-05-06 18:16:44,329: Key.space
+2022-05-06 18:16:50,262: Key.space
+2022-05-06 18:16:52,515: Key.space
+2022-05-06 18:16:56,276: Key.space
+2022-05-06 18:17:45,576: Key.ctrl
+2022-05-06 18:17:45,696: 'c'
