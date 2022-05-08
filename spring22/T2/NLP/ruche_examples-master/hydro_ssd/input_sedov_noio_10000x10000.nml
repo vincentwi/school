@@ -1,0 +1,25 @@
+This namelist contains various input parameters for HYDRO runs
+
+&RUN
+nstepmax=4
+tend=2.0
+noutput=10000000
+on_output=.true.
+/
+
+&MESH
+nx=10000
+ny=10000
+dx=0.0001
+boundary_left=1
+boundary_right=1
+boundary_down=1
+boundary_up=1
+idimbloc=1
+jdimbloc=1
+/
+
+&HYDRO
+courant_factor=0.8
+niter_riemann=10
+/

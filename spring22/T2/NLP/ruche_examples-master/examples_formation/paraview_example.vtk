@@ -1,0 +1,21 @@
+# vtk DataFile Version 2.0
+Cube structuré VTK
+ASCII
+
+DATASET STRUCTURED_POINTS
+DIMENSIONS 3 3 3
+ORIGIN -1 -1 -1
+SPACING 1 1 1
+
+POINT_DATA 27
+SCALARS ma_variable float 1
+LOOKUP_TABLE default
+1.73 1.41 1.73
+1.41 1.0  1.41
+1.73 1.41 1.73
+1.41 1.0  1.41
+1.0  0.0  1.0
+1.41 1.0  1.41
+1.73 1.41 1.73
+1.41 1.0  1.41
+1.73 1.41 1.73
